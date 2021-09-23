@@ -2,30 +2,23 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
+      {{ msg }} is a software company from Belgium.
     </p>
-    <h3>Installed CLI Plugins</h3>
+    <h2>Projects</h2>    
+    <h3>Spin-off from University of Liège</h3>
     <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank" rel="noopener">eslint</a></li>
+      <li><a href="https://mesydel.com" target="_blank" rel="noopener">Mesydel</a></li>
     </ul>
-    <h3>Essential Links</h3>
+    <h3>OpenSource Initiatives</h3>
     <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
+      <li><a href="https://corpus.lltl.be" target="_blank" rel="noopener">Corpus</a></li>
+      <li><a href="https://omdat.openjustice.be" target="_blank" rel="noopener">Omdat</a></li>
+      <li><a href="http://dataprotect.tintamarre.be" target="_blank" rel="noopener">OpenDataProtect</a></li>
     </ul>
-    <h3>Ecosystem</h3>
+    <h3>Contact</h3>
     <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
+      <li><a href="mailto:martin---at---erpicum.net" target="_blank" rel="noopener">Email</a></li>
+      <li><a href="https://www.linkedin.com/in/martinerpicum/" target="_blank" rel="noopener">LinkedIn</a></li>   
     </ul>
   </div>
 </template>
@@ -41,6 +34,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
 h3 {
   margin: 40px 0 0;
 }
