@@ -59,7 +59,7 @@ a {
   height: 40px;
   color: #2c3e50;
   font-size: 80%;
-  background-color: #ccc;
+  background-color: rgba(255, 255, 255, 0.205);
 }
 
 .footer a {

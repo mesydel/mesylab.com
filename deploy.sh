@@ -16,3 +16,4 @@ git add -A
 git commit -m 'deploy'
 git push -f git@github.com:mesydel/mesylab.com.git master:gh-pages
 cd -
+echo "Visit https://www.mesylab.com"

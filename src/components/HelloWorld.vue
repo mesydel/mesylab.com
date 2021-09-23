@@ -9,11 +9,11 @@
     <ul>
       <li><a href="https://mesydel.com" target="_blank" rel="noopener">Mesydel</a></li>
     </ul>
-    <h3>We also contribute to FLOSS initiatives</h3>
+    <h3>I also contribute to FLOSS initiatives</h3>
     <ul>
       <li><a href="https://corpus.lltl.be" target="_blank" rel="noopener">Corpus</a></li>
       <li><a href="https://omdat.openjustice.be" target="_blank" rel="noopener">Omdat</a></li>
-      <li><a href="http://dataprotect.tintamarre.be" target="_blank" rel="noopener">OpenDataProtect</a></li>
+      <li><a href="http://dataprotect.tintamarre.be" target="_blank" rel="noopener">DataProtect</a></li>
     </ul>
     <h3>Contact</h3>
     <ul>
@@ -25,7 +25,6 @@
 
 <script>
 export default {
-  name: 'HelloWorld',
   props: {
     msg: String
   }
