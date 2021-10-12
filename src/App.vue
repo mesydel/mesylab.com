@@ -1,23 +1,28 @@
 <template>
-  <HelloWorld msg="Mesylab SRL"/>
+  <Main :msg="company_name"/>
 
 <div class="footer">
-        Mesylab SRL — BE 0685.595.109<br />
-        <a href="https://www.openstreetmap.org/way/483208187" target="_blank" title="Mesylab">Rue Robespierre 6, 4140 Sprimont (Belgium)</a> | <a href="tel:+32 494 766 396">+32 494 766 396</a>
+        {{ company_name }} — BE 0685.595.109<br />
+        Rue Robespierre 6, 4140 Sprimont (Belgium) | <a href="tel:+32 494 766 396">+32 494 766 396</a>
 </div>
 
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Main from './components/Main.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Main
   },
+  data: function() {
+return {
+    company_name: "Mesylab SRL"
+  };
+},
     created(){
-        document.title = "Mesylab SRL"
+        document.title = this.company_name;
   }
 }
 </script>
@@ -35,6 +40,9 @@ body {
   margin-top: 60px;
 }
 
+h2 {
+  margin: 40px 0 0;
+}
 
 h3 {
   margin: 40px 0 0;
@@ -48,7 +56,7 @@ li {
   margin: 0 10px;
 }
 a {
-  color: #42b983;
+  color: #276fb8;
 }
 
 .footer {
@@ -59,7 +67,7 @@ a {
   height: 40px;
   color: #2c3e50;
   font-size: 80%;
-  background-color: rgba(255, 255, 255, 0.205);
+  background-color: #fafafa;
 }
 
 .footer a {
