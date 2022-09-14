@@ -1,8 +1,8 @@
 <template>
   <div class="hello-world">
-    <h1>{{ msg }}</h1>
+    <h1>{{ company }}</h1>
     <p>
-      {{ msg }} is a software company from Belgium.
+      {{ company }} is a software company from Belgium.
     </p>
     <h2>Projects</h2>    
     <h3>Spin-off from University of Liège</h3>
@@ -12,7 +12,7 @@
     <h3>I also contribute to FLOSS initiatives</h3>
     <ul>
       <li><a href="https://corpus.lltl.be" target="_blank" rel="noopener">Corpus</a></li>
-      <li><a href="https://omdat.openjustice.be" target="_blank" rel="noopener">Omdat</a></li>
+      <li><a href="https://omdat.openjustice.lltl.be/" target="_blank" rel="noopener">Omdat</a></li>
       <li><a href="http://dataprotect.tintamarre.be" target="_blank" rel="noopener">DataProtect</a></li>
     </ul>
     <h3>Contact</h3>
@@ -26,7 +26,7 @@
 <script>
 export default {
   props: {
-    msg: String
+    company: String
   }
 }
 </script>

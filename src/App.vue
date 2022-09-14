@@ -1,5 +1,5 @@
 <template>
-  <Main :msg="company_name"/>
+  <Main :company="company_name"/>
 
 <div class="footer">
         {{ company_name }} — BE 0685.595.109<br />
@@ -21,8 +21,8 @@ return {
     company_name: "Mesylab SRL"
   };
 },
-    created(){
-        document.title = this.company_name;
+ created(){
+      document.title = this.company_name;
   }
 }
 </script>
