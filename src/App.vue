@@ -1,6 +1,6 @@
 <template>
 <div class="bg-base-100">
-  <div class="flex flex-row md:flex text-center">
+  <div class="">
   <ProjectsComponent class="p-8" />
   </div>
 </div>
