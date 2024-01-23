@@ -4,7 +4,7 @@
   <div class="items-center">
 
     <p class="">{{ company }} — BE 0685.595.109<br />
-        Rue Robespierre 6, 4140 Sprimont (Belgium) | <a href="tel:+32 494 766 396" class="link link-primary">+32 494 766 396</a>
+        Rue Robespierre 6, 4140 Sprimont (Belgium) <!-- | <a href="tel:+32 494 766 396" class="link link-primary">+32 494 766 396</a> -->
     </p>
   </div>
 

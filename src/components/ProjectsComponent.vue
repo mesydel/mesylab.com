@@ -4,7 +4,7 @@
         <div class="mx-auto">
           <h1 class="text-5xl font-bold">Mesylab SRL</h1>
           <p class="py-6">
-            Software company from Belgium managed by Martin Erpicum (<a href="https://www.linkedin.com/in/martinerpicum/" target="_blank" rel="noopener" class="link link-primary">LinkedIn</a>, <a href="https://www.erpicum.net/" target="_blank" rel="noopener" class="link link-primary">Blog</a>). Our expertise is in the field of Data Engineering, Data Science and Public Participation.
+            Software company from Belgium managed by Martin Erpicum (<a href="https://www.linkedin.com/in/martinerpicum/" target="_blank" rel="noopener" class="link link-primary">LinkedIn</a>, <a href="https://www.tintamarre.be/" target="_blank" rel="noopener" class="link link-primary">Blog</a>). Our expertise is in the field of Data Engineering, Data Science and Public Participation.
           </p>
           <p class="mt-2 text-lg leading-8 text-gray-600 py-6">Some of my projects are listed here.</p>
         </div>
@@ -57,7 +57,7 @@ const posts = [
         'Mesydel is a spin-off from the University of Liège. It is a web application that allows you to create and manage your own surveys. It is a SaaS solution.',
     year_started: 2014,
     category: { title: 'SaaS', href: '#' },
-    blog_url: 'https://blog.mesydel.com/'
+    blog_url: 'https://mesydel.com'
   },
   {
     id: 3,
