@@ -2,13 +2,17 @@
     <div class="py-16 sm:py-16">
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="mx-auto">
-          <h1 class="text-5xl font-bold">Mesylab SRL</h1>
+          <h1 class="text-5xl font-bold">Mesylab <span class="text-gray-400">SRL</span></h1>
           <p class="py-6">
-            Software company from Belgium managed by Martin Erpicum (<a href="https://www.linkedin.com/in/martinerpicum/" target="_blank" rel="noopener" class="link link-primary">LinkedIn</a>, <a href="https://www.tintamarre.be/" target="_blank" rel="noopener" class="link link-primary">Blog</a>). Our expertise is in the field of Data Engineering, Data Science and Public Participation.
+            Mesylab SRL is a Belgian software company. Our expertise lies in Data Engineering, Data Science, and Public Participation. Connect with Martin on <a href="https://www.linkedin.com/in/martinerpicum/" target="_blank" rel="noopener" class="link link-primary">LinkedIn</a> or visit his <a href="https://www.tintamarre.be/" target="_blank" rel="noopener" class="link link-primary">Blog</a>.
           </p>
-          <p class="mt-2 text-lg leading-8 text-gray-600 py-6">Some of my projects are listed here.</p>
+
         </div>
-        <div class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+        <h3>
+          <span class="block text-2xl font-semibold text-gray-900">Projects</span>
+        </h3>
+        <p class="mt-2 text-lg leading-8 text-gray-600 py-6">Here are some of the projects I have worked on:</p>
+        <div class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-4 border-t border-gray-200 pt-4 sm:mt-4 sm:pt-4 lg:mx-0 lg:max-w-none lg:grid-cols-3">
           <article v-for="post in posts" :key="post.id" class="flex max-w-xl flex-col items-start justify-between">
             <div class="flex items-center gap-x-4 text-xs">
               <a :href="post.category.href" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">{{ post.category.title }}</a>
