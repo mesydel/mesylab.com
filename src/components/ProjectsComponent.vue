@@ -59,7 +59,8 @@ const posts = [
     year_ended: 2023,
     categories: [
       { id: 0, title: 'FLOSS', href: '#' },
-      { id: 1, title: 'SaaS', href: '#' }
+      { id: 1, title: 'SaaS', href: '#' },
+      { id: 2, title: 'Law', href: '#' },
     ]
   },
   {
@@ -71,7 +72,8 @@ const posts = [
     year_started: 2014,
     categories: [
       { id: 0, title: 'FLOSS', href: '#' },
-      { id: 1, title: 'SaaS', href: '#' }
+      { id: 1, title: 'SaaS', href: '#' },
+      { id: 2, title: 'Social Science', href: '#' }
     ],
     blog_url: 'https://mesydel.com'
   },
@@ -80,11 +82,12 @@ const posts = [
     title: 'Corpus',
     href: 'https://corpus.lltl.be',
     description:
-        'Corpus is a web application that allows you to create and manage your own corpora. It is a SaaS solution.',
+        'Corpus is a web application that allows you to tag your a set of document. It is a SaaS solution.',
     year_started: 2019,
     categories: [
       { id: 0, title: 'FLOSS', href: '#' },
-      { id: 1, title: 'SaaS', href: '#' }
+      { id: 1, title: 'SaaS', href: '#' },
+      { id: 2, title: 'Social Science', href: '#' },
     ],
     blog_url: 'https://docs.lltl.be/'
   },
@@ -163,7 +166,7 @@ const posts = [
   },
   {
     id: 10,
-    title: 'Maider',
+    title: 'Maider (PoC)',
     href: '',
     description: 'Service dedicated to help the walloon citizens to get information related to their rights.',
     year_started: 2022,
