@@ -60,7 +60,7 @@ const posts = [
     categories: [
       { id: 0, title: 'FLOSS', href: '#' },
       { id: 1, title: 'SaaS', href: '#' },
-      { id: 2, title: 'Law', href: '#' },
+      { id: 2, title: 'Law', href: '#' }
     ]
   },
   {
@@ -87,7 +87,7 @@ const posts = [
     categories: [
       { id: 0, title: 'FLOSS', href: '#' },
       { id: 1, title: 'SaaS', href: '#' },
-      { id: 2, title: 'Social Science', href: '#' },
+      { id: 2, title: 'Social Science', href: '#' }
     ],
     blog_url: 'https://docs.lltl.be/'
   },
