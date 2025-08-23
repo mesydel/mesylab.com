@@ -4,9 +4,10 @@
         <div class="mx-auto">
           <h1 class="text-5xl font-bold">Mesylab <span class="text-gray-400">SRL</span></h1>
           <p class="py-6">
-            Mesylab SRL is a Belgian software company dedicated to excellence in Data Engineering, Data Science, and Public Participation. As a single-owner enterprise, we pride ourselves on delivering personalized and highly specialized services.
+            Mesylab SRL is a Belgian software company dedicated to excellence in Data Engineering, Data Science, and Public Participation.
 
-            For professional insights and connections, feel free to connect with Martin on <a href="https://www.linkedin.com/in/martinerpicum/" target="_blank" rel="noopener" class="link link-primary">LinkedIn</a> or explore his thoughts and work through his <a href="https://www.tintamarre.be/" target="_blank" rel="noopener" class="link link-primary">Blog</a>.
+            For professional insights and connections, feel free to connect with me on <a href="https://www.linkedin.com/in/martinerpicum/" target="_blank" rel="noopener" class="link link-primary">LinkedIn</a> or explore my thoughts and work through my <a href="https://www.tintamarre.be/" target="_blank" rel="noopener" class="link link-primary">blog</a>. ~ Martin
+
           </p>
 
         </div>
@@ -32,7 +33,7 @@
                 {{ post.description }}
               </p>
                 <p class="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">
-                    <a :href="post.blog_url" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-xs text-gray-600 hover:bg-gray-100" v-if="post.blog_url">More info</a>
+                    <a :href="post.blog_url" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-xs text-gray-600 text-xs hover:bg-gray-100" v-if="post.blog_url">More info</a>
                 </p>
 
               <p class="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">
