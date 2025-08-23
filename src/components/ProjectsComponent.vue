@@ -4,7 +4,9 @@
         <div class="mx-auto">
           <h1 class="text-5xl font-bold">Mesylab <span class="text-gray-400">SRL</span></h1>
           <p class="py-6">
-            Mesylab SRL is a Belgian software company. Our expertise lies in Data Engineering, Data Science, and Public Participation. Connect with Martin on <a href="https://www.linkedin.com/in/martinerpicum/" target="_blank" rel="noopener" class="link link-primary">LinkedIn</a> or visit his <a href="https://www.tintamarre.be/" target="_blank" rel="noopener" class="link link-primary">Blog</a>.
+            Mesylab SRL is a Belgian software company dedicated to excellence in Data Engineering, Data Science, and Public Participation. As a single-owner enterprise, we pride ourselves on delivering personalized and highly specialized services.  
+
+            For professional insights and connections, feel free to connect with Martin on <a href="https://www.linkedin.com/in/martinerpicum/" target="_blank" rel="noopener" class="link link-primary">LinkedIn</a> or explore his thoughts and work through his <a href="https://www.tintamarre.be/" target="_blank" rel="noopener" class="link link-primary">Blog</a>.
           </p>
 
         </div>
