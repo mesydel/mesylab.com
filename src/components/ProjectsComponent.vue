@@ -4,7 +4,7 @@
         <div class="mx-auto">
           <h1 class="text-5xl font-bold">Mesylab <span class="text-gray-400">SRL</span></h1>
           <p class="py-6">
-            Mesylab SRL is a Belgian software company dedicated to excellence in Data Engineering, Data Science, and Public Participation. As a single-owner enterprise, we pride ourselves on delivering personalized and highly specialized services.  
+            Mesylab SRL is a Belgian software company dedicated to excellence in Data Engineering, Data Science, and Public Participation. As a single-owner enterprise, we pride ourselves on delivering personalized and highly specialized services.
 
             For professional insights and connections, feel free to connect with Martin on <a href="https://www.linkedin.com/in/martinerpicum/" target="_blank" rel="noopener" class="link link-primary">LinkedIn</a> or explore his thoughts and work through his <a href="https://www.tintamarre.be/" target="_blank" rel="noopener" class="link link-primary">Blog</a>.
           </p>
@@ -13,21 +13,20 @@
         <h3>
           <span class="block text-2xl font-semibold text-gray-900">Projects</span>
         </h3>
-        <p class="mt-2 text-lg leading-8 text-gray-600 py-6">Here are some of the projects I have worked on (directly for Mesylab, as a consultant, or as a employee). I am always looking for new projects to work on. If you have an idea, feel free to contact me.</p>
+        <p class="py-6">Here are some of the projects I have worked on (directly for Mesylab, as a consultant, or as a employee). I am always looking for new projects to work on. If you have an idea, feel free to contact me.</p>
         <div class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-4 border-t border-gray-200 pt-4 sm:mt-4 sm:pt-4 lg:mx-0 lg:max-w-none lg:grid-cols-3">
           <article v-for="post in posts" :key="post.id" class="flex max-w-xl flex-col items-start justify-between">
-            <div class="flex items-center gap-x-4 text-xs">
 
-            <a v-for="category in post.categories" :key="category.id" :href="category.href" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-small text-gray-600 hover:bg-gray-100">
-              {{ category.title }}
-            </a>
-            </div>
             <div class="group relative">
-              <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
+              <h3 class="mt-3 text-lg font-semibold text-gray-900 group-hover:text-gray-600">
                 <a :href="post.href">
-                  <span class="absolute inset-0" />
+                  <span class="absolute inset-0 leading-6" />
                   {{ post.title }}
                 </a>
+                <br />
+                <a v-for="category in post.categories" :key="category.id" :href="category.href" class="relative z-10 rounded-full bg-blue-50 px-3 py-1.5 font-small text-gray-600 hover:bg-gray-100 text-xs">
+              {{ category.title }}
+            </a>
               </h3>
               <p class="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">
                 {{ post.description }}
@@ -40,6 +39,7 @@
                 <time class="text-gray-500" v-if="!post.year_ended">{{ post.year_started }} - {{ new Date().getFullYear() }}</time>
                 <time class="text-gray-500" v-else>{{ post.year_started }} - {{ post.year_ended }}</time>
               </p>
+
             </div>
 
           </article>
