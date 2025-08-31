@@ -74,7 +74,7 @@ const posts = [
         'Mesydel is a spin-off from the University of Liège. It is a web application that allows you to create and manage your own surveys. It is a SaaS solution.',
     year_started: 2014,
     categories: [
-      { id: 0, title: 'FLOSS', href: '#' },
+      { id: 0, title: 'Research', href: '#' },
       { id: 1, title: 'SaaS', href: '#' },
       { id: 2, title: 'Social Science', href: '#' }
     ],
