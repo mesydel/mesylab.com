@@ -1,10 +1,10 @@
 <template>
-<div class="bg-base-100">
-  <div class="">
-  <ProjectsComponent class="p-8" />
+  <div class="min-h-screen bg-base-100 flex flex-col">
+    <main class="flex-grow">
+      <ProjectsComponent />
+    </main>
+    <FooterComponent :company="company_name" />
   </div>
-</div>
-  <FooterComponent :company="company_name" class="text-center flex flex-col" />
 </template>
 
 <script>
@@ -29,5 +29,28 @@ export default {
 </script>
 
 <style>
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
 
+/* Selection color */
+::selection {
+  background-color: #2a9d8f;
+  color: white;
+}
+
+/* Link transitions */
+a {
+  transition: color 0.2s ease;
+}
+
+/* Card hover animations */
+article {
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+article:hover {
+  transform: translateY(-2px);
+}
 </style>
