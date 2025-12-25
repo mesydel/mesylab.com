@@ -15,7 +15,7 @@ module.exports = {
       {
         mesylab: {
           primary: '#264653',
-          secondary: '#2a9d8f',
+          secondary: '#344c77',
           accent: '#e9c46a',
           neutral: '#0a0a13',
           'base-100': '#fff',

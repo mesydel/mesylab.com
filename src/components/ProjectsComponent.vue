@@ -90,11 +90,11 @@ const getCategoryClass = (title) => {
     SaaS: 'bg-blue-100 text-blue-700',
     Research: 'bg-purple-100 text-purple-700',
     Law: 'bg-amber-100 text-amber-700',
-    'Social Science': 'bg-rose-100 text-rose-700',
-    FWB: 'bg-red-100 text-red-700',
+    'Social Science': 'bg-gray-100 text-gray-700',
+    FWB: 'bg-yellow-100 text-yellow-700',
     PoC: 'bg-gray-100 text-gray-700',
     AI: 'bg-violet-100 text-violet-700',
-    Data: 'bg-cyan-100 text-cyan-700'
+    Data: 'bg-blue-100 text-blue-700'
   }
   return classes[title] || 'bg-gray-100 text-gray-600'
 }
