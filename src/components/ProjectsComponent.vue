@@ -135,6 +135,7 @@ const posts = [
     description:
         'Collaborative document annotation tool for qualitative research. Enables teams to tag, categorize, and analyze large document collections with customizable taxonomies.',
     year_started: 2019,
+    year_ended: 2025,
     categories: [
       { id: 0, title: 'FLOSS', href: '#' },
       { id: 1, title: 'SaaS', href: '#' },
@@ -149,6 +150,7 @@ const posts = [
     description:
         'Interdisciplinary research center at the University of Liège exploring the intersection of law and technology. Focus areas include legal AI, access to justice, and digital rights.',
     year_started: 2020,
+    year_ended: 2025,
     categories: [
       { id: 0, title: 'Research', href: '#' },
       { id: 1, title: 'Law', href: '#' }
@@ -162,6 +164,7 @@ const posts = [
     description:
         'AI-powered analysis tool that leverages large language models to automatically categorize and summarize open-ended survey responses, dramatically reducing manual coding time.',
     year_started: 2022,
+    year_ended: 2025,
     categories: [
       { id: 0, title: 'FWB', href: '#' },
       { id: 1, title: 'AI', href: '#' }
@@ -175,6 +178,7 @@ const posts = [
     description:
         'Web-based utility for migrating legacy FileMaker Pro databases to modern formats. Handles complex field mappings and preserves data integrity during conversion.',
     year_started: 2023,
+    year_ended: 2025,
     categories: [
       { id: 0, title: 'FWB', href: '#' },
       { id: 1, title: 'Data', href: '#' }
