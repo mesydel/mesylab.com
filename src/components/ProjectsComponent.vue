@@ -275,6 +275,18 @@ const posts = [
       { id: 2, title: 'Data', href: '#' }
     ],
     blog_url: ''
+  },
+  {
+    id: 14,
+    title: 'Metronome & Tuner',
+    href: 'https://www.tintamarre.be/metronome/',
+    description:
+        'Web-based practice tool for musicians combining a feature-rich metronome (40–208 BPM, 8 sound presets, beat visualization) and chromatic/guitar tuner with multiple tuning presets and real-time pitch detection.',
+    year_started: 2025,
+    categories: [
+      { id: 0, title: 'FLOSS', href: '#' }
+    ],
+    blog_url: ''
   }
 
 ].sort(() => Math.random() - 0.5)
