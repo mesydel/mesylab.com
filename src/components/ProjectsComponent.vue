@@ -131,11 +131,10 @@ const posts = [
   {
     id: 3,
     title: 'Corpus',
-    href: 'https://corpus.lltl.be',
+    href: 'https://corpus.mesylab.com',
     description:
         'Collaborative document annotation tool for qualitative research. Enables teams to tag, categorize, and analyze large document collections with customizable taxonomies.',
     year_started: 2019,
-    year_ended: 2025,
     categories: [
       { id: 0, title: 'FLOSS', href: '#' },
       { id: 1, title: 'SaaS', href: '#' },
