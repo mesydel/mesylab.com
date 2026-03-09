@@ -252,7 +252,7 @@ const posts = [
   {
     id: 12,
     title: 'Marches ADEPS',
-    href: 'https://marches-adeps.datawb.be',
+    href: 'https://tintamarre.be/marches-adeps',
     description:
         'Interactive platform listing organized walking events (marches) across the Fédération Wallonie-Bruxelles. Includes route maps, difficulty ratings, and registration information.',
     year_started: 2023,
@@ -286,7 +286,18 @@ const posts = [
       { id: 0, title: 'FLOSS', href: '#' }
     ],
     blog_url: ''
+  },
+  {
+    id: 15,
+    title: 'Écoles FWB',
+    href: 'https://www.tintamarre.be/ecoles/',
+    description:
+        ' Trouvez des informations sur les 8377 établissements d'enseignement en Fédération Wallonie-Bruxelles. ',
+    year_started: 2026,
+    categories: [
+      { id: 0, title: 'FLOSS', href: '#' }
+    ],
+    blog_url: ''
   }
-
 ].sort(() => Math.random() - 0.5)
 </script>
