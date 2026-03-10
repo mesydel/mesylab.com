@@ -140,7 +140,7 @@ const posts = [
       { id: 1, title: 'SaaS', href: '#' },
       { id: 2, title: 'Social Science', href: '#' }
     ],
-    blog_url: 'https://docs.lltl.be/'
+    blog_url: 'https://corpus.mesylab.com/'
   },
   {
     id: 4,
