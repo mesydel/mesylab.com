@@ -252,7 +252,7 @@ const posts = [
   {
     id: 12,
     title: 'Marches ADEPS',
-    href: 'https://tintamarre.be/marches-adeps',
+    href: 'https://www.tintamarre.be/marches-adeps',
     description:
         'Interactive platform listing organized walking events (marches) across the Fédération Wallonie-Bruxelles. Includes route maps, difficulty ratings, and registration information.',
     year_started: 2023,
