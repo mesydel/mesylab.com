@@ -131,17 +131,16 @@ const posts = [
   {
     id: 3,
     title: 'Corpus',
-    href: 'https://corpus.lltl.be',
+    href: 'https://corpus.mesylab.com',
     description:
         'Collaborative document annotation tool for qualitative research. Enables teams to tag, categorize, and analyze large document collections with customizable taxonomies.',
     year_started: 2019,
-    year_ended: 2025,
     categories: [
       { id: 0, title: 'FLOSS', href: '#' },
       { id: 1, title: 'SaaS', href: '#' },
       { id: 2, title: 'Social Science', href: '#' }
     ],
-    blog_url: 'https://docs.lltl.be/'
+    blog_url: 'https://corpus.mesylab.com/'
   },
   {
     id: 4,
@@ -253,7 +252,7 @@ const posts = [
   {
     id: 12,
     title: 'Marches ADEPS',
-    href: 'https://marches-adeps.datawb.be',
+    href: 'https://www.tintamarre.be/marches-adeps',
     description:
         'Interactive platform listing organized walking events (marches) across the Fédération Wallonie-Bruxelles. Includes route maps, difficulty ratings, and registration information.',
     year_started: 2023,
@@ -287,7 +286,18 @@ const posts = [
       { id: 0, title: 'FLOSS', href: '#' }
     ],
     blog_url: ''
+  },
+  {
+    id: 15,
+    title: 'Écoles FWB',
+    href: 'https://www.tintamarre.be/ecoles/',
+    description:
+        "Trouvez des informations sur les 8377 établissements d'enseignement en Fédération Wallonie-Bruxelles.",
+    year_started: 2026,
+    categories: [
+      { id: 0, title: 'FLOSS', href: '#' }
+    ],
+    blog_url: ''
   }
-
 ].sort(() => Math.random() - 0.5)
 </script>
