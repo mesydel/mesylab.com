@@ -22,10 +22,19 @@
           <span class="text-xs">Rue Robespierre 6, 4140 Sprimont, Belgium</span>
         </div>
 
-        <!-- Copyright -->
-        <p class="text-xs text-gray-400">
-          &copy; {{ new Date().getFullYear() }} {{ company }}
-        </p>
+        <!-- Right side: spin-off + copyright -->
+        <div class="flex flex-col items-end gap-1">
+          <p class="text-xs text-gray-400">
+            Spin-off of
+            <a href="https://www.uliege.be" target="_blank" rel="noopener noreferrer"
+               class="text-gray-400 underline underline-offset-2 hover:text-gray-600 transition-colors">
+              Université de Liège
+            </a>
+          </p>
+          <p class="text-xs text-gray-400">
+            &copy; {{ new Date().getFullYear() }} {{ company }}
+          </p>
+        </div>
       </div>
     </div>
   </footer>
