@@ -4,9 +4,7 @@
       <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
         <!-- Company Info -->
         <div class="flex items-center gap-3">
-          <div class="h-8 w-8 rounded-lg bg-primary flex items-center justify-center">
-            <span class="text-white font-bold text-sm">M</span>
-          </div>
+          <LogoComponent class="h-8 w-auto" />
           <div>
             <p class="text-sm font-semibold text-gray-900">{{ company }}</p>
             <p class="text-xs text-gray-500">VAT: BE 0685.595.109</p>
@@ -41,6 +39,8 @@
 </template>
 
 <script setup>
+import LogoComponent from './LogoComponent.vue'
+
 defineProps({
   company: String
 })
