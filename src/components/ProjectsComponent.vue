@@ -3,7 +3,12 @@
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <!-- Hero Section -->
         <div class="mx-auto mb-12">
-          <LogoComponent class="h-16 w-auto mb-2" />
+          <div class="flex items-start justify-between">
+            <h1 class="text-5xl font-bold tracking-tight">
+              Mesylab <span class="text-secondary">SRL</span>
+            </h1>
+            <LogoComponent class="h-28 w-auto" />
+          </div>
           <p class="mt-6 text-lg leading-8 text-gray-700 max-w-3xl">
             We build intelligent software solutions that transform how organizations work with data.
             Specializing in <span class="font-semibold text-primary">Data Engineering</span>,
