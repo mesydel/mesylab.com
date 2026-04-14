@@ -23,8 +23,8 @@
               LinkedIn
             </a>
             <span class="text-gray-300">|</span>
-            <a href="https://www.tintamarre.be/" target="_blank" rel="noopener"
-               class="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-secondary transition-colors duration-200">
+            <a href="/blog/"
+                class="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-secondary transition-colors duration-200">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
               Blog
             </a>
@@ -41,15 +41,15 @@
           </p>
 
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <article v-for="post in posts" :key="post.id"
+            <article v-for="post in projectPosts" :id="`project-${post.slug}`" :key="post.slug"
                      class="group relative bg-white rounded-xl border border-gray-100 p-6 hover:shadow-lg hover:border-secondary/30 transition-all duration-300">
 
               <!-- Categories -->
               <div class="flex flex-wrap gap-2 mb-4">
-                <span v-for="category in post.categories" :key="category.id"
-                      :class="getCategoryClass(category.title)"
+                <span v-for="category in post.categories" :key="category"
+                      :class="getCategoryClass(category)"
                       class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium">
-                  {{ category.title }}
+                  {{ category }}
                 </span>
               </div>
 
@@ -81,12 +81,77 @@
             </article>
           </div>
         </div>
+
+        <div class="border-t border-gray-200 pt-10 mt-10">
+          <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <h2 class="text-2xl font-bold text-gray-900">From the blog</h2>
+              <p class="text-gray-600 max-w-2xl">
+                Fresh notes generated from Markdown files, with metadata pulled directly from each post.
+              </p>
+            </div>
+            <a href="/blog/" class="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-secondary transition-colors">
+              Browse all posts
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+
+          <p v-if="isLoadingBlog" class="mt-6 text-sm text-gray-500">
+            Loading the latest posts...
+          </p>
+
+          <p v-else-if="blogError" class="mt-6 text-sm text-error">
+            {{ blogError }}
+          </p>
+
+          <div v-else-if="latestPosts.length" class="mt-6 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+            <article
+              v-for="post in latestPosts"
+              :key="post.slug"
+              class="rounded-xl border border-gray-100 bg-white p-6 shadow-sm"
+            >
+              <div class="flex flex-wrap items-center gap-3 text-xs text-gray-500">
+                <time>{{ formatPostDate(post.date) }}</time>
+                <a
+                  v-if="post.project"
+                  :href="post.project.url"
+                  class="font-medium text-primary hover:text-secondary transition-colors"
+                >
+                  {{ post.project.title }}
+                </a>
+                <span
+                  v-for="tag in post.tags"
+                  :key="tag"
+                  class="rounded-full bg-gray-100 px-2.5 py-1 font-medium text-gray-600"
+                >
+                  {{ tag }}
+                </span>
+              </div>
+              <h3 class="mt-4 text-lg font-semibold text-gray-900">
+                <a :href="post.url" class="hover:text-primary transition-colors">
+                  {{ post.title }}
+                </a>
+              </h3>
+              <p class="mt-3 text-sm leading-6 text-gray-600">
+                {{ post.description }}
+              </p>
+            </article>
+          </div>
+
+          <p v-else class="mt-6 text-sm text-gray-500">
+            No blog posts have been published yet.
+          </p>
+        </div>
       </div>
     </div>
   </template>
 
 <script setup>
+import { onMounted, ref } from 'vue'
 import LogoComponent from './LogoComponent.vue'
+import projects from '../data/projects.json'
 
 const getCategoryClass = (title) => {
   const classes = {
@@ -103,205 +168,49 @@ const getCategoryClass = (title) => {
   return classes[title] || 'bg-gray-100 text-gray-600'
 }
 
-const posts = [
-  {
-    id: 1,
-    title: 'DataProtect',
-    href: 'https://github.com/openjusticebe/OJDataProtect',
-    description:
-        'Open-source GDPR compliance platform enabling organizations to document data processing activities, manage consent records, and generate regulatory reports.',
-    year_started: 2021,
-    year_ended: 2023,
-    categories: [
-      { id: 0, title: 'FLOSS', href: '#' },
-      { id: 1, title: 'SaaS', href: '#' },
-      { id: 2, title: 'Law', href: '#' }
-    ]
-  },
-  {
-    id: 2,
-    title: 'Mesydel',
-    href: 'https://mesydel.com',
-    description:
-        'University of Liège spin-off providing a comprehensive survey platform for academic research. Features advanced questionnaire design, multi-language support, and statistical analysis tools.',
-    year_started: 2014,
-    categories: [
-      { id: 0, title: 'Research', href: '#' },
-      { id: 1, title: 'SaaS', href: '#' },
-      { id: 2, title: 'Social Science', href: '#' }
-    ],
-    blog_url: 'https://mesydel.com'
-  },
-  {
-    id: 3,
-    title: 'Corpus',
-    href: 'https://corpus.mesylab.com',
-    description:
-        'Collaborative document annotation tool for qualitative research. Enables teams to tag, categorize, and analyze large document collections with customizable taxonomies.',
-    year_started: 2019,
-    categories: [
-      { id: 0, title: 'FLOSS', href: '#' },
-      { id: 1, title: 'SaaS', href: '#' },
-      { id: 2, title: 'Social Science', href: '#' }
-    ],
-    blog_url: 'https://corpus.mesylab.com/'
-  },
-  {
-    id: 4,
-    title: 'LegalTech Lab',
-    href: 'https://legaltech.uliege.be/',
-    description:
-        'Interdisciplinary research center at the University of Liège exploring the intersection of law and technology. Focus areas include legal AI, access to justice, and digital rights.',
-    year_started: 2020,
-    year_ended: 2025,
-    categories: [
-      { id: 0, title: 'Research', href: '#' },
-      { id: 1, title: 'Law', href: '#' }
-    ],
-    blog_url: 'https://legaltech.uliege.be/'
-  },
-  {
-    id: 5,
-    title: 'Pipelette',
-    href: '',
-    description:
-        'AI-powered analysis tool that leverages large language models to automatically categorize and summarize open-ended survey responses, dramatically reducing manual coding time.',
-    year_started: 2022,
-    year_ended: 2025,
-    categories: [
-      { id: 0, title: 'FWB', href: '#' },
-      { id: 1, title: 'AI', href: '#' }
-    ],
-    blog_url: ''
-  },
-  {
-    id: 6,
-    title: 'FileMakerPro Converter',
-    href: '',
-    description:
-        'Web-based utility for migrating legacy FileMaker Pro databases to modern formats. Handles complex field mappings and preserves data integrity during conversion.',
-    year_started: 2023,
-    year_ended: 2025,
-    categories: [
-      { id: 0, title: 'FWB', href: '#' },
-      { id: 1, title: 'Data', href: '#' }
-    ],
-    blog_url: ''
-  },
-  {
-    id: 7,
-    title: 'Houtsitrue API',
-    href: '',
-    description:
-        'Belgian identity and address validation service. Verifies national registry numbers, enriches postal addresses, and integrates with government databases for accurate citizen data.',
-    year_started: 2024,
-    categories: [
-      { id: 0, title: 'FWB', href: '#' },
-      { id: 1, title: 'Data', href: '#' }
-    ],
-    blog_url: ''
-  },
-  {
-    id: 8,
-    title: 'Ciboulot API',
-    href: '',
-    description:
-        'Retrieval-Augmented Generation (RAG) service that ingests and vectorizes documents, exposing them through a Model Context Protocol (MCP) API for intelligent document querying.',
-    year_started: 2024,
-    categories: [
-      { id: 0, title: 'FWB', href: '#' },
-      { id: 1, title: 'AI', href: '#' }
-    ],
-    blog_url: ''
-  },
-  {
-    id: 9,
-    title: 'Subventions API',
-    href: '',
-    description:
-        'Open data API providing programmatic access to subsidies and grants awarded by the Fédération Wallonie-Bruxelles, enabling transparency and public accountability.',
-    year_started: 2023,
-    categories: [
-      { id: 0, title: 'FWB', href: '#' },
-      { id: 1, title: 'Data', href: '#' }
-    ],
-    blog_url: ''
-  },
-  {
-    id: 10,
-    title: 'Maider',
-    href: '',
-    description:
-        'Proof-of-concept citizen assistance service helping Walloon residents navigate administrative procedures and understand their rights through an accessible digital interface.',
-    year_started: 2022,
-    year_ended: 2023,
-    categories: [
-      { id: 0, title: 'PoC', href: '#' }
-    ],
-    blog_url: ''
-  },
-  {
-    id: 11,
-    title: 'Subventions Portal',
-    href: 'https://subventions.datawb.be',
-    description:
-        'Public-facing dashboard visualizing FWB subsidy allocations. Features interactive charts, searchable beneficiary lists, and downloadable datasets for journalists and researchers.',
-    year_started: 2023,
-    categories: [
-      { id: 0, title: 'FWB', href: '#' },
-      { id: 1, title: 'Data', href: '#' }
-    ],
-    blog_url: ''
-  },
-  {
-    id: 12,
-    title: 'Marches ADEPS',
-    href: 'https://www.tintamarre.be/marches-adeps',
-    description:
-        'Interactive platform listing organized walking events (marches) across the Fédération Wallonie-Bruxelles. Includes route maps, difficulty ratings, and registration information.',
-    year_started: 2023,
-    categories: [
-      { id: 0, title: 'FWB', href: '#' }
-    ],
-    blog_url: ''
-  },
-  {
-    id: 13,
-    title: 'FWB Data Platform',
-    href: '#',
-    description:
-        'Enterprise data orchestration platform built on Dagster for the Fédération Wallonie-Bruxelles. Manages ETL pipelines, data quality monitoring, and serves as the backbone for open data initiatives.',
-    year_started: 2024,
-    categories: [
-      { id: 0, title: 'FLOSS', href: '#' },
-      { id: 1, title: 'FWB', href: '#' },
-      { id: 2, title: 'Data', href: '#' }
-    ],
-    blog_url: ''
-  },
-  {
-    id: 14,
-    title: 'Metronome & Tuner',
-    href: 'https://www.tintamarre.be/metronome/',
-    description:
-        'Web-based practice tool for musicians combining a feature-rich metronome (40–208 BPM, 8 sound presets, beat visualization) and chromatic/guitar tuner with multiple tuning presets and real-time pitch detection.',
-    year_started: 2025,
-    categories: [
-      { id: 0, title: 'FLOSS', href: '#' }
-    ],
-    blog_url: ''
-  },
-  {
-    id: 15,
-    title: 'Écoles FWB',
-    href: 'https://www.tintamarre.be/ecoles/',
-    description:
-        "Trouvez des informations sur les 8377 établissements d'enseignement en Fédération Wallonie-Bruxelles.",
-    year_started: 2026,
-    categories: [
-      { id: 0, title: 'FLOSS', href: '#' }
-    ],
-    blog_url: ''
+const latestPosts = ref([])
+const isLoadingBlog = ref(true)
+const blogError = ref('')
+
+const formatPostDate = (value) => {
+  const parsedDate = new Date(value)
+
+  if (Number.isNaN(parsedDate.getTime())) {
+    return value
   }
-].sort(() => Math.random() - 0.5)
+
+  return new Intl.DateTimeFormat('en', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric'
+  }).format(parsedDate)
+}
+
+const loadLatestPosts = async () => {
+  try {
+    const response = await fetch('/blog/index.json', {
+      headers: {
+        Accept: 'application/json'
+      }
+    })
+
+    if (!response.ok) {
+      throw new Error(`Failed to load blog index (${response.status})`)
+    }
+
+    const posts = await response.json()
+    latestPosts.value = posts.slice(0, 3)
+  } catch (error) {
+    console.error(error)
+    blogError.value = 'The blog index is temporarily unavailable.'
+  } finally {
+    isLoadingBlog.value = false
+  }
+}
+
+onMounted(() => {
+  loadLatestPosts()
+})
+
+const projectPosts = [...projects].sort(() => Math.random() - 0.5)
 </script>

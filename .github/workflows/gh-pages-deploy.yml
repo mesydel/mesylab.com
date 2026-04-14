@@ -8,6 +8,8 @@ jobs:
     - uses: actions/checkout@v2
     - id: Build-Vue
       uses: xRealNeon/VuePagesAction@1.0.1
+      env:
+        BLOG_EXCLUDE_DRAFTS: 'true'
       with:
         username: 'mesydel'
         reponame: 'mesylab.com'

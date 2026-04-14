@@ -1,0 +1,141 @@
+[
+  {
+    "slug": "dataprotect",
+    "title": "DataProtect",
+    "href": "https://github.com/openjusticebe/OJDataProtect",
+    "description": "Open-source GDPR compliance platform enabling organizations to document data processing activities, manage consent records, and generate regulatory reports.",
+    "year_started": 2021,
+    "year_ended": 2023,
+    "categories": ["FLOSS", "SaaS", "Law"]
+  },
+  {
+    "slug": "mesydel",
+    "title": "Mesydel",
+    "href": "https://mesydel.com",
+    "description": "University of Liège spin-off providing a comprehensive survey platform for academic research. Features advanced questionnaire design, multi-language support, and statistical analysis tools.",
+    "year_started": 2014,
+    "categories": ["Research", "SaaS", "Social Science"],
+    "blog_url": "https://mesydel.com"
+  },
+  {
+    "slug": "corpus",
+    "title": "Corpus",
+    "href": "https://corpus.mesylab.com",
+    "description": "Collaborative document annotation tool for qualitative research. Enables teams to tag, categorize, and analyze large document collections with customizable taxonomies.",
+    "year_started": 2019,
+    "categories": ["FLOSS", "SaaS", "Social Science"],
+    "blog_url": "https://corpus.mesylab.com/"
+  },
+  {
+    "slug": "legaltech-lab",
+    "title": "LegalTech Lab",
+    "href": "https://legaltech.uliege.be/",
+    "description": "Interdisciplinary research center at the University of Liège exploring the intersection of law and technology. Focus areas include legal AI, access to justice, and digital rights.",
+    "year_started": 2020,
+    "year_ended": 2025,
+    "categories": ["Research", "Law"],
+    "blog_url": "https://legaltech.uliege.be/"
+  },
+  {
+    "slug": "pipelette",
+    "title": "Pipelette",
+    "href": "",
+    "description": "AI-powered analysis tool that leverages large language models to automatically categorize and summarize open-ended survey responses, dramatically reducing manual coding time.",
+    "year_started": 2022,
+    "year_ended": 2025,
+    "categories": ["FWB", "AI"],
+    "blog_url": ""
+  },
+  {
+    "slug": "filemakerpro-converter",
+    "title": "FileMakerPro Converter",
+    "href": "",
+    "description": "Web-based utility for migrating legacy FileMaker Pro databases to modern formats. Handles complex field mappings and preserves data integrity during conversion.",
+    "year_started": 2023,
+    "year_ended": 2025,
+    "categories": ["FWB", "Data"],
+    "blog_url": ""
+  },
+  {
+    "slug": "houtsitrue-api",
+    "title": "Houtsitrue API",
+    "href": "",
+    "description": "Belgian identity and address validation service. Verifies national registry numbers, enriches postal addresses, and integrates with government databases for accurate citizen data.",
+    "year_started": 2024,
+    "categories": ["FWB", "Data"],
+    "blog_url": ""
+  },
+  {
+    "slug": "ciboulot-api",
+    "title": "Ciboulot API",
+    "href": "",
+    "description": "Retrieval-Augmented Generation (RAG) service that ingests and vectorizes documents, exposing them through a Model Context Protocol (MCP) API for intelligent document querying.",
+    "year_started": 2024,
+    "categories": ["FWB", "AI"],
+    "blog_url": ""
+  },
+  {
+    "slug": "subventions-api",
+    "title": "Subventions API",
+    "href": "",
+    "description": "Open data API providing programmatic access to subsidies and grants awarded by the Federation Wallonie-Bruxelles, enabling transparency and public accountability.",
+    "year_started": 2023,
+    "categories": ["FWB", "Data"],
+    "blog_url": ""
+  },
+  {
+    "slug": "maider",
+    "title": "Maider",
+    "href": "",
+    "description": "Proof-of-concept citizen assistance service helping Walloon residents navigate administrative procedures and understand their rights through an accessible digital interface.",
+    "year_started": 2022,
+    "year_ended": 2023,
+    "categories": ["PoC"],
+    "blog_url": ""
+  },
+  {
+    "slug": "subventions-portal",
+    "title": "Subventions Portal",
+    "href": "https://subventions.datawb.be",
+    "description": "Public-facing dashboard visualizing FWB subsidy allocations. Features interactive charts, searchable beneficiary lists, and downloadable datasets for journalists and researchers.",
+    "year_started": 2023,
+    "categories": ["FWB", "Data"],
+    "blog_url": ""
+  },
+  {
+    "slug": "marches-adeps",
+    "title": "Marches ADEPS",
+    "href": "https://www.tintamarre.be/marches-adeps",
+    "description": "Interactive platform listing organized walking events (marches) across the Federation Wallonie-Bruxelles. Includes route maps, difficulty ratings, and registration information.",
+    "year_started": 2023,
+    "categories": ["FWB"],
+    "blog_url": ""
+  },
+  {
+    "slug": "fwb-data-platform",
+    "title": "FWB Data Platform",
+    "href": "#",
+    "description": "Enterprise data orchestration platform built on Dagster for the Federation Wallonie-Bruxelles. Manages ETL pipelines, data quality monitoring, and serves as the backbone for open data initiatives.",
+    "year_started": 2024,
+    "categories": ["FLOSS", "FWB", "Data"],
+    "blog_url": ""
+  },
+  {
+    "slug": "metronome-tuner",
+    "title": "Metronome & Tuner",
+    "href": "https://www.tintamarre.be/metronome/",
+    "description": "Web-based practice tool for musicians combining a feature-rich metronome (40-208 BPM, 8 sound presets, beat visualization) and chromatic/guitar tuner with multiple tuning presets and real-time pitch detection.",
+    "year_started": 2025,
+    "categories": ["FLOSS"],
+    "blog_url": ""
+  },
+  {
+    "slug": "ecoles-fwb",
+    "title": "Ecoles FWB",
+    "href": "https://www.tintamarre.be/ecoles/",
+    "description": "Trouvez des informations sur les 8377 etablissements d'enseignement en Federation Wallonie-Bruxelles.",
+    "year_started": 2026,
+    "categories": ["FLOSS"],
+    "blog_url": ""
+  }
+]
