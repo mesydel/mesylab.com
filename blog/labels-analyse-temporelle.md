@@ -14,6 +14,9 @@ Un corpus ne se réduit pas à un ensemble de textes : il rassemble souvent des 
 
 Corpus permet d'exploiter cette dimension temporelle grâce aux **labels de type date**.
 
+![](https://i.imgur.com/ccLRwQi.png)
+
+![](https://i.imgur.com/4pB3NhQ.png)
 ---
 
 ## Comment fonctionne un label de date
@@ -28,10 +31,15 @@ Contrairement aux tags, qui codent des passages à l'intérieur du texte, un lab
 
 1. Ouvrez un texte de votre collection
 2. Accédez à la section **Labels**
-3. Créez un nouveau label en choisissant le type *date et heure*
+3. Créez un nouveau label en choisissant le type *datetime*
 4. Saisissez la valeur et enregistrez
 
-[*capture d'écran : ajout d'un label de type date sur un texte*]
+![Schéma : un label de date ancre chaque texte sur un axe temporel, accessible dans toutes les vues d'analyse*](https://i.imgur.com/mrGFdGb.png)
+
+![](https://i.imgur.com/lHxP0qA.png)
+
+![](https://i.imgur.com/28eeERn.png)
+
 
 Répétez l'opération pour tous les textes. Une fois chaque document daté, vous disposez d'un axe temporel utilisable dans toutes les vues d'analyse.
 
@@ -45,7 +53,8 @@ Le vrai intérêt des labels de date apparaît quand vous les croisez avec les o
 
 Dans la **concordance**, vous pouvez restreindre la recherche aux textes publiés après une certaine date — ou comparer les occurrences d'un terme entre deux périodes distinctes. La **fréquence lexicale** et le **TF-IDF** acceptent le même filtre : vous comparez ainsi le vocabulaire dominant de votre corpus sur différentes tranches de temps, sans dupliquer votre collection.
 
-[*capture d'écran : filtre par label dans la vue concordance*]
+
+![](https://i.imgur.com/tDgKjpk.png)
 
 ---
 
@@ -74,3 +83,9 @@ Le label entier convient souvent mieux aux granularités grossières (l'année d
 ---
 
 L'analyse temporelle ne s'automatise pas — le chercheur reste toujours seul juge du sens d'une évolution. Mais les labels de date éliminent le tri manuel et rendent cette lecture accessible directement depuis les vues d'analyse de Corpus.
+
+
+
+
+
+

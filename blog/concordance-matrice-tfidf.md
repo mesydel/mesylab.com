@@ -20,7 +20,7 @@ La concordance (ou KWIC, *keyword in context*) cherche un mot ou une expression 
 
 Ce qui rend cet outil précieux tient à un détail : il ne compte pas, il **montre**. Cinquante occurrences du mot *risque* alignées dans un tableau révèlent immédiatement si le terme circule sur un registre technique, émotionnel ou rhétorique — ou sur plusieurs à la fois. Une information que le comptage seul ne livrera jamais.
 
-[*capture d'écran : tableau KWIC avec colonnes contexte gauche, terme, contexte droit*]
+![Schéma : la matrice de co-occurrence révèle les associations entre tags, au-delà de leur simple fréquence*](https://i.imgur.com/wytkYRS.png)
 
 La concordance se révèle particulièrement utile pour :
 
@@ -36,9 +36,8 @@ La matrice montre combien de textes partagent deux tags à la fois. Plus la cell
 
 La matrice révèle la **structure des associations dans le corpus** : quels thèmes se lient intimement, quels acteurs apparaissent systématiquement dans les mêmes contextes, quelles dimensions de l'analyse se chevauchent dans les textes réels.
 
-[*capture d'écran : matrice avec une cellule ouverte montrant les textes concernés*]
+![Schéma : matrice de co-occurrence filtrée sur une facette](https://i.imgur.com/X8t4bDJ.png)
 
-![Schéma : la matrice de co-occurrence révèle les associations entre tags, au-delà de leur simple fréquence*](https://i.imgur.com/DcWqVXi.png)
 
 Cliquer sur une cellule ouvre directement la liste des textes concernés et les passages codés correspondants. Ce raccourci mène du motif statistique vers la matière première du corpus — et pose un garde-fou utile : une co-occurrence marque un point de départ, jamais une conclusion.
 
