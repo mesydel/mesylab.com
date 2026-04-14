@@ -78,7 +78,7 @@ Cette lecture diachronique ne réclame pas de créer deux collections séparées
 
 | Situation | Type de label recommandé |
 |-----------|--------------------------|
-| Date précise (jour/mois/année) | Date et heure |
+| Date précise (jour/mois/année) | Datetime |
 | Année seulement | Nombre entier |
 | Période nommée (« avant réforme », « phase 2 ») | Texte libre |
 
