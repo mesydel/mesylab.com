@@ -12,7 +12,7 @@ const blogMeta = {
   logoUrl: '/mesylab-logo.svg',
   themeCssUrl: '/blog-theme.css',
   blogTitle: 'Mesylab Blog',
-  blogDescription: 'Notes and project writing published from simple Markdown files.'
+  blogDescription: 'Small notes and project writing.'
 }
 
 const markdownImageExtensions = new Set([

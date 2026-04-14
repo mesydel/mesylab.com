@@ -14,14 +14,17 @@ Un corpus ne se réduit pas à un ensemble de textes : il rassemble souvent des 
 
 Corpus permet d'exploiter cette dimension temporelle grâce aux **labels de type date**.
 
-![](https://i.imgur.com/ccLRwQi.png)
+![Schéma : un label de date ancre chaque texte sur un axe temporel, accessible dans toutes les vues d'analyse*](https://i.imgur.com/mrGFdGb.png)
 
-![](https://i.imgur.com/4pB3NhQ.png)
 ---
 
 ## Comment fonctionne un label de date
 
 Les labels servent de champs de métadonnées attachés à chaque texte d'une collection. Corpus en propose trois types : texte libre, nombre entier, et **date et heure**. Ce dernier stocke une date précise — de publication, d'entretien, de jugement — rattachée à un document.
+
+![](https://i.imgur.com/4pB3NhQ.png)
+![](https://i.imgur.com/ccLRwQi.png)
+
 
 Contrairement aux tags, qui codent des passages à l'intérieur du texte, un label décrit le texte dans son ensemble. Un label de date ancre donc le document sur un axe temporel.
 
@@ -36,12 +39,10 @@ Contrairement aux tags, qui codent des passages à l'intérieur du texte, un lab
 
 ![Schéma : un label de date ancre chaque texte sur un axe temporel, accessible dans toutes les vues d'analyse*](https://i.imgur.com/mrGFdGb.png)
 
-![](https://i.imgur.com/lHxP0qA.png)
-
-![](https://i.imgur.com/28eeERn.png)
-
 
 Répétez l'opération pour tous les textes. Une fois chaque document daté, vous disposez d'un axe temporel utilisable dans toutes les vues d'analyse.
+
+![](https://i.imgur.com/lHxP0qA.png)
 
 > **Conseil pratique** : renseignez les labels avant de commencer le codage. Dès qu'un filtre temporel s'active, les textes sans date disparaissent silencieusement des résultats.
 
@@ -65,6 +66,9 @@ La combinaison la plus puissante associe les labels de date aux tags. Prenez un 
 - Repérer les thèmes qui n'émergent qu'après la réforme — ou ceux qui s'effacent
 - Comparer la fréquence d'un même tag d'une période à l'autre pour mesurer un déplacement d'accent
 - Observer si les termes qui accompagnent un acteur changent selon le contexte institutionnel
+
+![](https://i.imgur.com/28eeERn.png)
+
 
 Cette lecture diachronique ne réclame pas de créer deux collections séparées. Une seule collection bien labellisée suffit, et vous naviguez entre les périodes grâce aux filtres.
 
