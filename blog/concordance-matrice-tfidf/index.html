@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Concordance, matrice et TF-IDF : aller au-delà du comptage | Mesylab SRL</title>
+    <meta name="description" content="Une fois un corpus codé, la tentation guette : s&#39;arrêter là, compter les tags, noter les plus fréquents, en tirer des conclusions. Mais cette lecture reste en surface. Trois out...">
+    <link rel="canonical" href="/blog/concordance-matrice-tfidf/">
+    <meta property="og:title" content="Concordance, matrice et TF-IDF : aller au-delà du comptage">
+    <meta property="og:description" content="Une fois un corpus codé, la tentation guette : s&#39;arrêter là, compter les tags, noter les plus fréquents, en tirer des conclusions. Mais cette lecture reste en surface. Trois out...">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2026-04-10">
+    
+    <link rel="stylesheet" href="/blog-theme.css">
+  </head>
+  <body>
+    <div class="blog-shell">
+      <main class="blog-main">
+        <header class="blog-header">
+          <div class="blog-topbar">
+            <a class="blog-brand" href="/" aria-label="Back to Mesylab SRL">
+              <img class="blog-logo" src="/mesylab-logo.svg" alt="Mesylab SRL">
+              <span class="blog-brand__text">Mesylab SRL</span>
+            </a>
+            <nav class="blog-nav" aria-label="Blog navigation">
+              <a href="/blog/">All posts</a>
+            </nav>
+          </div>
+        </header>
+
+        <section class="blog-content">
+          <div class="blog-backlink">
+            <a href="/blog/">Back to all posts</a>
+          </div>
+          <article class="blog-article">
+            <div class="blog-article__header">
+              <div class="blog-article__heading">
+                <p class="blog-eyebrow">Mesylab</p>
+                <h1 class="blog-title">Concordance, matrice et TF-IDF : aller au-delà du comptage</h1>
+              </div>
+              
+                <a class="blog-project-badge" href="/#project-corpus">Corpus</a>
+              
+            </div>
+            <div class="blog-post-meta">
+              <time datetime="2026-04-10">April 10, 2026</time>
+              
+                <div class="blog-tags">
+                  <span class="blog-tag">corpus</span><span class="blog-tag">tfidf</span>
+                </div>
+              
+            </div>
+            
+            <div class="blog-prose">
+              <p>Une fois un corpus codé, la tentation guette : s’arrêter là, compter les tags, noter les plus fréquents, en tirer des conclusions. Mais cette lecture reste en surface. Trois outils d’analyse de Corpus permettent de poser des questions plus précises — et souvent plus intéressantes.</p>
+<hr />
+<h2>La concordance : lire les mots en contexte</h2>
+<p>La concordance (ou KWIC, <em>keyword in context</em>) cherche un mot ou une expression dans l’ensemble de la collection et affiche chaque occurrence avec son contexte immédiat.</p>
+<p>Ce qui rend cet outil précieux tient à un détail : il ne compte pas, il <strong>montre</strong>. Cinquante occurrences du mot <em>risque</em> alignées dans un tableau révèlent immédiatement si le terme circule sur un registre technique, émotionnel ou rhétorique — ou sur plusieurs à la fois. Une information que le comptage seul ne livrera jamais.</p>
+<p><img src="https://i.imgur.com/wytkYRS.png" alt="Schéma : la matrice de co-occurrence révèle les associations entre tags, au-delà de leur simple fréquence*" loading="lazy" decoding="async" /></p>
+<p>La concordance se révèle particulièrement utile pour :</p>
+<ul>
+<li><strong>Vérifier la cohérence du codage</strong> : les segments portant un tag donné utilisent-ils vraiment le terme de la même manière ?</li>
+<li><strong>Explorer avant de coder</strong> : repérer comment un terme circule dans le corpus avant de décider s’il mérite un tag propre</li>
+<li><strong>Comparer des sous-corpus</strong> : filtrer par label (par exemple par période ou par profil d’interviewé) pour voir si l’usage d’un terme varie selon les groupes</li>
+</ul>
+<hr />
+<h2>La matrice de co-occurrence : découvrir les associations entre tags</h2>
+<p>La matrice montre combien de textes partagent deux tags à la fois. Plus la cellule fonce, plus les deux tags apparaissent ensemble dans les mêmes textes.</p>
+<p>La matrice révèle la <strong>structure des associations dans le corpus</strong> : quels thèmes se lient intimement, quels acteurs apparaissent systématiquement dans les mêmes contextes, quelles dimensions de l’analyse se chevauchent dans les textes réels.</p>
+<p><img src="https://i.imgur.com/X8t4bDJ.png" alt="Schéma : matrice de co-occurrence filtrée sur une facette" loading="lazy" decoding="async" /></p>
+<p>Cliquer sur une cellule ouvre directement la liste des textes concernés et les passages codés correspondants. Ce raccourci mène du motif statistique vers la matière première du corpus — et pose un garde-fou utile : une co-occurrence marque un point de départ, jamais une conclusion.</p>
+<p>Le filtre par <strong>facette</strong> gagne ici toute son efficacité. Restreindre la matrice à une seule dimension analytique — les acteurs, les dispositifs, les émotions — permet de lire les associations sans se laisser distraire par les autres familles de tags.</p>
+<hr />
+<h2>Le TF-IDF : identifier ce qui rend chaque texte singulier</h2>
+<p>Les fréquences lexicales disent ce qui revient partout dans un corpus. Le TF-IDF dit ce qui caractérise chaque texte.</p>
+<p>Le principe tient en une ligne : un terme très fréquent dans un seul texte mais rare ailleurs obtient un score élevé. Un terme qui revient partout obtient un score faible, même quand il abonde. Ce calcul met en évidence ce qui distingue un document des autres.</p>
+<p><img src="https://i.imgur.com/DcWqVXi.png" alt="Schéma : le TF-IDF identifie les termes qui caractérisent chaque texte, au-delà de leur simple fréquence*" loading="lazy" decoding="async" /></p>
+<p>En pratique, le TF-IDF permet de répondre à des questions comme :</p>
+<ul>
+<li><em>En quoi ce jugement se distingue-t-il des autres affaires du corpus ?</em></li>
+<li><em>Quel vocabulaire appartient en propre à cet interviewé et ne se retrouve pas ailleurs ?</em></li>
+<li><em>Quels textes se démarquent fortement du reste de la collection ?</em></li>
+</ul>
+<p>Chaque terme identifié s’ouvre directement dans la concordance pour en inspecter le contexte et décider s’il mérite un tag.</p>
+<hr />
+<h2>Utiliser les trois outils ensemble</h2>
+<p>Ces vues ne restent pas cloisonnées : elles s’alimentent mutuellement.</p>
+<p><strong>Deux enchaînements typiques :</strong></p>
+<p><em>De la lexicologie au codage :</em>
+le TF-IDF signale un terme saillant dans un texte → la concordance montre comment ce terme circule dans l’ensemble du corpus → vous décidez si ce terme justifie un nouveau tag ou s’il vient enrichir un tag existant.</p>
+<p><em>De la statistique à la lecture :</em>
+la matrice révèle une co-occurrence forte entre deux tags → vous cliquez sur la cellule pour ouvrir les textes concernés → vous lisez les passages pour voir si cette association porte un sens analytique ou ne traduit qu’un effet du codage.</p>
+<p>Ces allers-retours entre vues quantitatives et lecture des textes nourrissent toute analyse qualitative rigoureuse. Concordance, matrice et TF-IDF accélèrent la navigation dans un grand corpus, mais ils ne remplacent ni la lecture ni l’interprétation : ils guident le regard vers les endroits qui méritent qu’on s’y arrête.</p>
+
+            </div>
+          </article>
+        </section>
+      </main>
+
+      <footer class="blog-footer">
+        <div class="blog-footer__inner">
+          <p><a href="/blog/">Back to the blog index</a></p>
+          <div class="blog-footer__links">
+            <a href="/">Home</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

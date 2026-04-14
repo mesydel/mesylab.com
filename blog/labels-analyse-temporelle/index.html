@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Analyser l&#39;évolution d&#39;un corpus dans le temps avec les labels de date | Mesylab SRL</title>
+    <meta name="description" content="Un corpus ne se réduit pas à un ensemble de textes : il rassemble souvent des documents répartis dans le temps. Articles de presse publiés sur dix ans, entretiens menés avant et...">
+    <link rel="canonical" href="/blog/labels-analyse-temporelle/">
+    <meta property="og:title" content="Analyser l&#39;évolution d&#39;un corpus dans le temps avec les labels de date">
+    <meta property="og:description" content="Un corpus ne se réduit pas à un ensemble de textes : il rassemble souvent des documents répartis dans le temps. Articles de presse publiés sur dix ans, entretiens menés avant et...">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2026-04-11">
+    
+    <link rel="stylesheet" href="/blog-theme.css">
+  </head>
+  <body>
+    <div class="blog-shell">
+      <main class="blog-main">
+        <header class="blog-header">
+          <div class="blog-topbar">
+            <a class="blog-brand" href="/" aria-label="Back to Mesylab SRL">
+              <img class="blog-logo" src="/mesylab-logo.svg" alt="Mesylab SRL">
+              <span class="blog-brand__text">Mesylab SRL</span>
+            </a>
+            <nav class="blog-nav" aria-label="Blog navigation">
+              <a href="/blog/">All posts</a>
+            </nav>
+          </div>
+        </header>
+
+        <section class="blog-content">
+          <div class="blog-backlink">
+            <a href="/blog/">Back to all posts</a>
+          </div>
+          <article class="blog-article">
+            <div class="blog-article__header">
+              <div class="blog-article__heading">
+                <p class="blog-eyebrow">Mesylab</p>
+                <h1 class="blog-title">Analyser l&#39;évolution d&#39;un corpus dans le temps avec les labels de date</h1>
+              </div>
+              
+                <a class="blog-project-badge" href="/#project-corpus">Corpus</a>
+              
+            </div>
+            <div class="blog-post-meta">
+              <time datetime="2026-04-11">April 11, 2026</time>
+              
+                <div class="blog-tags">
+                  <span class="blog-tag">corpus</span><span class="blog-tag">labels</span>
+                </div>
+              
+            </div>
+            
+            <div class="blog-prose">
+              <p>Un corpus ne se réduit pas à un ensemble de textes : il rassemble souvent des documents répartis dans le temps. Articles de presse publiés sur dix ans, entretiens menés avant et après une réforme, jugements rendus sur plusieurs décennies — dans chacun de ces cas, la date relève de l’analyse, non de l’administration. Elle fonctionne comme une véritable variable analytique.</p>
+<p>Corpus permet d’exploiter cette dimension temporelle grâce aux <strong>labels de type date</strong>.</p>
+<p><img src="https://i.imgur.com/mrGFdGb.png" alt="Schéma : un label de date ancre chaque texte sur un axe temporel, accessible dans toutes les vues d'analyse*" loading="lazy" decoding="async" /></p>
+<hr />
+<h2>Comment fonctionne un label de date</h2>
+<p>Les labels servent de champs de métadonnées attachés à chaque texte d’une collection. Corpus en propose trois types : texte libre, nombre entier, et <strong>date et heure</strong>. Ce dernier stocke une date précise — de publication, d’entretien, de jugement — rattachée à un document.</p>
+<p><img src="https://i.imgur.com/4pB3NhQ.png" alt="" loading="lazy" decoding="async" />
+<img src="https://i.imgur.com/ccLRwQi.png" alt="" loading="lazy" decoding="async" /></p>
+<p>Contrairement aux tags, qui codent des passages à l’intérieur du texte, un label décrit le texte dans son ensemble. Un label de date ancre donc le document sur un axe temporel.</p>
+<hr />
+<h2>Créer et renseigner un label de date</h2>
+<ol>
+<li>Ouvrez un texte de votre collection</li>
+<li>Accédez à la section <strong>Labels</strong></li>
+<li>Créez un nouveau label en choisissant le type <em>datetime</em></li>
+<li>Saisissez la valeur et enregistrez</li>
+</ol>
+<p><img src="https://i.imgur.com/mrGFdGb.png" alt="Schéma : un label de date ancre chaque texte sur un axe temporel, accessible dans toutes les vues d'analyse*" loading="lazy" decoding="async" /></p>
+<p>Répétez l’opération pour tous les textes. Une fois chaque document daté, vous disposez d’un axe temporel utilisable dans toutes les vues d’analyse.</p>
+<p><img src="https://i.imgur.com/lHxP0qA.png" alt="" loading="lazy" decoding="async" /></p>
+<blockquote>
+<p><strong>Conseil pratique</strong> : renseignez les labels avant de commencer le codage. Dès qu’un filtre temporel s’active, les textes sans date disparaissent silencieusement des résultats.</p>
+</blockquote>
+<hr />
+<h2>Filtrer les analyses par période</h2>
+<p>Le vrai intérêt des labels de date apparaît quand vous les croisez avec les outils d’analyse.</p>
+<p>Dans la <strong>concordance</strong>, vous pouvez restreindre la recherche aux textes publiés après une certaine date — ou comparer les occurrences d’un terme entre deux périodes distinctes. La <strong>fréquence lexicale</strong> et le <strong>TF-IDF</strong> acceptent le même filtre : vous comparez ainsi le vocabulaire dominant de votre corpus sur différentes tranches de temps, sans dupliquer votre collection.</p>
+<p><img src="https://i.imgur.com/tDgKjpk.png" alt="" loading="lazy" decoding="async" /></p>
+<hr />
+<h2>Croiser labels de date et tags : suivre l’évolution des thèmes</h2>
+<p>La combinaison la plus puissante associe les labels de date aux tags. Prenez un corpus d’entretiens menés avant et après une réforme. En filtrant les analyses par période, vous pouvez :</p>
+<ul>
+<li>Repérer les thèmes qui n’émergent qu’après la réforme — ou ceux qui s’effacent</li>
+<li>Comparer la fréquence d’un même tag d’une période à l’autre pour mesurer un déplacement d’accent</li>
+<li>Observer si les termes qui accompagnent un acteur changent selon le contexte institutionnel</li>
+</ul>
+<p><img src="https://i.imgur.com/28eeERn.png" alt="" loading="lazy" decoding="async" /></p>
+<p>Cette lecture diachronique ne réclame pas de créer deux collections séparées. Une seule collection bien labellisée suffit, et vous naviguez entre les périodes grâce aux filtres.</p>
+<hr />
+<h2>Choisir le bon type de label</h2>
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>Type de label recommandé</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Date précise (jour/mois/année)</td>
+<td>Datetime</td>
+</tr>
+<tr>
+<td>Année seulement</td>
+<td>Nombre entier</td>
+</tr>
+<tr>
+<td>Période nommée (« avant réforme », « phase 2 »)</td>
+<td>Texte libre</td>
+</tr>
+</tbody>
+</table>
+<p>Le label entier convient souvent mieux aux granularités grossières (l’année de publication). Le label texte permet des catégories nommées qui s’affichent lisiblement dans les filtres et les graphiques.</p>
+<hr />
+<p>L’analyse temporelle ne s’automatise pas — le chercheur reste toujours seul juge du sens d’une évolution. Mais les labels de date éliminent le tri manuel et rendent cette lecture accessible directement depuis les vues d’analyse de Corpus.</p>
+
+            </div>
+          </article>
+        </section>
+      </main>
+
+      <footer class="blog-footer">
+        <div class="blog-footer__inner">
+          <p><a href="/blog/">Back to the blog index</a></p>
+          <div class="blog-footer__links">
+            <a href="/">Home</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

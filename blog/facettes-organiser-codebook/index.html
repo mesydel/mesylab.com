@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Organiser son codebook avec les facettes | Mesylab SRL</title>
+    <meta name="description" content="Un codebook qui grandit signale une analyse qui avance. Mais passé une cinquantaine de tags, la liste devient difficile à lire, à expliquer à de nouveaux collaborateurs, et à ut...">
+    <link rel="canonical" href="/blog/facettes-organiser-codebook/">
+    <meta property="og:title" content="Organiser son codebook avec les facettes">
+    <meta property="og:description" content="Un codebook qui grandit signale une analyse qui avance. Mais passé une cinquantaine de tags, la liste devient difficile à lire, à expliquer à de nouveaux collaborateurs, et à ut...">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2026-04-09">
+    
+    <link rel="stylesheet" href="/blog-theme.css">
+  </head>
+  <body>
+    <div class="blog-shell">
+      <main class="blog-main">
+        <header class="blog-header">
+          <div class="blog-topbar">
+            <a class="blog-brand" href="/" aria-label="Back to Mesylab SRL">
+              <img class="blog-logo" src="/mesylab-logo.svg" alt="Mesylab SRL">
+              <span class="blog-brand__text">Mesylab SRL</span>
+            </a>
+            <nav class="blog-nav" aria-label="Blog navigation">
+              <a href="/blog/">All posts</a>
+            </nav>
+          </div>
+        </header>
+
+        <section class="blog-content">
+          <div class="blog-backlink">
+            <a href="/blog/">Back to all posts</a>
+          </div>
+          <article class="blog-article">
+            <div class="blog-article__header">
+              <div class="blog-article__heading">
+                <p class="blog-eyebrow">Mesylab</p>
+                <h1 class="blog-title">Organiser son codebook avec les facettes</h1>
+              </div>
+              
+                <a class="blog-project-badge" href="/#project-corpus">Corpus</a>
+              
+            </div>
+            <div class="blog-post-meta">
+              <time datetime="2026-04-09">April 9, 2026</time>
+              
+                <div class="blog-tags">
+                  <span class="blog-tag">corpus</span><span class="blog-tag">codebook</span>
+                </div>
+              
+            </div>
+            
+            <div class="blog-prose">
+              <p>Un codebook qui grandit signale une analyse qui avance. Mais passé une cinquantaine de tags, la liste devient difficile à lire, à expliquer à de nouveaux collaborateurs, et à utiliser efficacement dans les vues d’analyse. Il faut structurer.</p>
+<p>Corpus propose deux outils pour cela : la <strong>hiérarchie parent/enfant</strong> et les <strong>facettes</strong>. Les deux se complètent, mais ils répondent à des besoins différents.</p>
+<hr />
+<h2>La hiérarchie parent/enfant : affiner un thème</h2>
+<p>La relation parent/enfant permet de spécifier un tag. À partir d’un tag <em>Émotions</em>, vous pouvez rattacher <em>Peur</em>, <em>Colère</em> ou <em>Soulagement</em> comme enfants. Cette structure reflète une progression du général au particulier, à l’intérieur d’un même thème.</p>
+<p>Elle trouve sa place quand des tags partagent le même référent et que leur distinction tient à un niveau de granularité plus fin.</p>
+<hr />
+<h2>Les facettes : regrouper par dimension analytique</h2>
+<p>Les facettes fonctionnent différemment. Elles ne placent pas un tag sous un autre — elles signalent qu’un groupe de tags appartient à la même <strong>dimension de lecture</strong>, indépendamment de leur niveau hiérarchique.</p>
+<p>Quelques exemples typiques :</p>
+<table>
+<thead>
+<tr>
+<th>Facette</th>
+<th>Tags inclus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Acteurs</strong></td>
+<td><code>juge</code>, <code>avocat</code>, <code>témoin</code>, <code>expert</code>, <code>plaignant</code></td>
+</tr>
+<tr>
+<td><strong>Émotions</strong></td>
+<td><code>peur</code>, <code>colère</code>, <code>soulagement</code>, <code>confusion</code></td>
+</tr>
+<tr>
+<td><strong>Temporalité</strong></td>
+<td><code>avant les faits</code>, <code>pendant la procédure</code>, <code>après le jugement</code></td>
+</tr>
+<tr>
+<td><strong>Dispositifs</strong></td>
+<td><code>législation</code>, <code>jurisprudence</code>, <code>pratique institutionnelle</code></td>
+</tr>
+</tbody>
+</table>
+<p>Ces tags ne relèvent pas d’une hiérarchie commune. Ils partagent une seule chose : la question analytique à laquelle ils répondent — <em>qui parle ?</em>, <em>quelles émotions s’expriment ?</em>, <em>à quel moment ?</em>, <em>par quels moyens ?</em></p>
+<p><img src="https://i.imgur.com/bDVHe6s.png" alt="Schéma : les facettes regroupent des tags qui répondent à la même question analytique, sans hiérarchie entre eux" loading="lazy" decoding="async" /></p>
+<hr />
+<h2>Ce que les facettes permettent concrètement</h2>
+<p><strong>Dans le codebook</strong>, les facettes structurent l’affichage et facilitent la transmission : un nouveau membre de l’équipe comprend immédiatement les grandes dimensions de l’analyse sans lire chaque tag un par un.</p>
+<p><strong>Dans la matrice de co-occurrence</strong>, vous pouvez filtrer l’affichage sur une seule facette. Restreindre la matrice aux tags de la facette <em>Acteurs</em> permet de voir quels acteurs apparaissent ensemble dans les mêmes textes, sans vous noyer dans les autres dimensions.</p>
+<p><img src="https://i.imgur.com/X8t4bDJ.png" alt="Schéma : matrice de co-occurrence filtrée sur une facette" loading="lazy" decoding="async" /></p>
+<p><strong>Dans la concordance</strong>, les facettes servent de filtre : vous pouvez chercher un terme en limitant les résultats aux segments déjà porteurs d’un tag d’une facette donnée.</p>
+<p><strong>À travers la couleur</strong>, enfin, une facette devient immédiatement reconnaissable : assigner une teinte à la dimension <em>Acteurs</em> fait ressortir d’un coup d’œil tous les tags qui en relèvent, dans toutes les vues de la collection.</p>
+<hr />
+<h2>Quand créer les facettes ?</h2>
+<p>Pas dès le début. Les facettes prennent sens une fois que vous disposez d’une première vue d’ensemble du codebook — typiquement après une première passe de codage complète.</p>
+<p>Quelques questions pour guider la réflexion :</p>
+<ul>
+<li>Certains tags répondent-ils à <em>qui</em> (acteurs), d’autres à <em>comment</em> (dispositifs), d’autres à <em>quand</em> (temporalité) ?</li>
+<li>Identifiez-vous des groupes de tags que vous voudrez filtrer ensemble dans la matrice de co-occurrence ?</li>
+<li>Souhaitez-vous que les exports du codebook restent lisibles pour des personnes extérieures au projet ?</li>
+</ul>
+<p>Si oui à l’une de ces questions, les facettes s’imposent comme l’outil adapté.</p>
+<hr />
+<h2>Ce que les facettes ne font pas</h2>
+<p>Une facette ne remplace pas la définition des tags. Elle ne résout pas les problèmes d’un codebook incohérent : des tags trop proches, des définitions floues, des chevauchements non assumés. Ces questions relèvent de la révision du codebook lui-même.</p>
+<p>Les facettes font une chose précise : rendre visible la logique d’un codebook déjà pensé — et faciliter la navigation dans les analyses une fois cette logique posée.</p>
+
+            </div>
+          </article>
+        </section>
+      </main>
+
+      <footer class="blog-footer">
+        <div class="blog-footer__inner">
+          <p><a href="/blog/">Back to the blog index</a></p>
+          <div class="blog-footer__links">
+            <a href="/">Home</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

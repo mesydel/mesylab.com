@@ -1,0 +1,53 @@
+[
+  {
+    "title": "Analyser l'évolution d'un corpus dans le temps avec les labels de date",
+    "slug": "labels-analyse-temporelle",
+    "url": "/blog/labels-analyse-temporelle/",
+    "date": "2026-04-11",
+    "description": "Un corpus ne se réduit pas à un ensemble de textes : il rassemble souvent des documents répartis dans le temps. Articles de presse publiés sur dix ans, entretiens menés avant et...",
+    "tags": [
+      "corpus",
+      "labels"
+    ],
+    "project": {
+      "slug": "corpus",
+      "title": "Corpus",
+      "url": "/#project-corpus"
+    },
+    "image": null
+  },
+  {
+    "title": "Concordance, matrice et TF-IDF : aller au-delà du comptage",
+    "slug": "concordance-matrice-tfidf",
+    "url": "/blog/concordance-matrice-tfidf/",
+    "date": "2026-04-10",
+    "description": "Une fois un corpus codé, la tentation guette : s'arrêter là, compter les tags, noter les plus fréquents, en tirer des conclusions. Mais cette lecture reste en surface. Trois out...",
+    "tags": [
+      "corpus",
+      "tfidf"
+    ],
+    "project": {
+      "slug": "corpus",
+      "title": "Corpus",
+      "url": "/#project-corpus"
+    },
+    "image": null
+  },
+  {
+    "title": "Organiser son codebook avec les facettes",
+    "slug": "facettes-organiser-codebook",
+    "url": "/blog/facettes-organiser-codebook/",
+    "date": "2026-04-09",
+    "description": "Un codebook qui grandit signale une analyse qui avance. Mais passé une cinquantaine de tags, la liste devient difficile à lire, à expliquer à de nouveaux collaborateurs, et à ut...",
+    "tags": [
+      "corpus",
+      "codebook"
+    ],
+    "project": {
+      "slug": "corpus",
+      "title": "Corpus",
+      "url": "/#project-corpus"
+    },
+    "image": null
+  }
+]
