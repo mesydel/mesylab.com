@@ -157,15 +157,13 @@ code {
 }
 
 .blog-summary,
-.blog-standfirst,
 .blog-section-heading__copy {
   max-width: 42rem;
   color: #4b5563;
   line-height: 1.7;
 }
 
-.blog-summary,
-.blog-standfirst {
+.blog-summary {
   margin-top: 1rem;
   font-size: 1.125rem;
 }
@@ -345,10 +343,6 @@ code {
   max-width: 52rem;
   margin: 0 auto;
   padding: 2rem;
-}
-
-.blog-standfirst {
-  max-width: 44rem;
 }
 
 .blog-post-meta {

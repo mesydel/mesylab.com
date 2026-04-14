@@ -444,7 +444,6 @@ const buildPostPage = (post) => `<!DOCTYPE html>
               <div class="blog-article__heading">
                 <p class="blog-eyebrow">Mesylab</p>
                 <h1 class="blog-title">${escapeHtml(post.title)}</h1>
-                <p class="blog-standfirst">${escapeHtml(post.description)}</p>
               </div>
               ${post.project ? `
                 <a class="blog-project-badge" href="${escapeHtml(post.project.url)}">${escapeHtml(post.project.title)}</a>
