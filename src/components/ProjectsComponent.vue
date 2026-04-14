@@ -87,7 +87,6 @@
             <div>
               <h2 class="text-2xl font-bold text-gray-900">From the blog</h2>
               <p class="text-gray-600 max-w-2xl">
-                Fresh notes generated from Markdown files, with metadata pulled directly from each post.
               </p>
             </div>
             <a href="/blog/" class="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-secondary transition-colors">
