@@ -10,6 +10,7 @@ const renderPostCard = (post) => `
         <div class="blog-card__header">
           <div class="blog-card__meta">
             ${post.displayDate ? `<time datetime="${escapeHtml(post.date)}">${escapeHtml(post.displayDate)}</time>` : ''}
+            ${post.author ? `<span class="blog-author">By ${escapeHtml(post.author)}</span>` : ''}
           </div>
           ${post.project ? `<a class="blog-project-badge" href="${escapeHtml(post.project.url)}">${escapeHtml(post.project.title)}</a>` : ''}
         </div>
@@ -142,6 +143,7 @@ const buildPostPage = (post) => `<!DOCTYPE html>
             </div>
             <div class="blog-post-meta">
               ${post.displayDate ? `<time datetime="${escapeHtml(post.date)}">${escapeHtml(post.displayDate)}</time>` : ''}
+              ${post.author ? `<span class="blog-author">By ${escapeHtml(post.author)}</span>` : ''}
               ${post.tags.length ? `
                 <div class="blog-tags">
                   ${renderTags(post.tags)}

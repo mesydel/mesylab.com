@@ -35,6 +35,9 @@ const buildPost = (markdownFilePath) => {
     ? data.tags.filter((tag) => typeof tag === 'string' && tag.trim()).map((tag) => tag.trim())
     : []
   const project = resolveProjectReference(data.project)
+  const author = typeof data.author === 'string' && data.author.trim()
+    ? data.author.trim()
+    : null
   const image = typeof data.image === 'string' && data.image.trim()
     ? rewriteContentUrl(data.image.trim(), relativePath)
     : null
@@ -52,6 +55,7 @@ const buildPost = (markdownFilePath) => {
     description,
     tags,
     project,
+    author,
     image,
     draft: data.draft === true,
     html
