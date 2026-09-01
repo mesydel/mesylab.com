@@ -39,9 +39,9 @@ Processus didactique, la méthode Delphi a été conçue dans le but d’offrir 
 
 Habituellement, une ou plusieurs de ces caractéristiques entraînent le besoin de faire appel à la méthode Delphi :
 
-- **Subjectivité du sujet abordé :**le problème ne se prête pas à des techniques d’analyse précises mais peut tirer profit de jugements subjectifs sur une base collective.
+- **Subjectivité du sujet abordé :** le problème ne se prête pas à des techniques d’analyse précises mais peut tirer profit de jugements subjectifs sur une base collective.
 - **Besoin de faire dialoguer des personnes issues de parcours différents :** les personnes requises pour participer à l’examen d’un problème vaste ou complexe peuvent ne disposer d’aucune expérience en communication et présenter différents parcours professionnels avec leurs expertises et compétences.
-- **Contraintes logistiques :**le nombre de personnes requises est trop élevé pour interagir efficacement dans le cadre d’un échange en face à face.
+- **Contraintes logistiques :** le nombre de personnes requises est trop élevé pour interagir efficacement dans le cadre d’un échange en face à face.
 - **Besoin de préparation avant une réunion :** l’efficacité des réunions en face à face peut être accrue par un processus de communication collective supplémentaire. Outil d’aide à la décision, la méthode conduit, implicitement ou explicitement, à la création d’un consensus quant aux résultats de la démarche (choix, recommandations, avis ou modalités d’action).
 - **Acceptabilité sociale des décisions :** les désaccords sont tellement importants ou politiquement inacceptables que le processus de communication doit être arbitré et/ou l’anonymat doit être garanti. La procédure peut également avoir pour objectif une prise de conscience collective auprès du public concerné ainsi que des experts académiques, des industriels ou encore des agences publiques.
 - **Recueil d’un pluralité d’opinions :** l’hétérogénéité des participants doit être préservée afin de garantir la validité des résultats, c’est-à-dire afin d’éviter toute domination imposée par le nombre ou par une forte personnalité. L’émergence de la plus grande diversité possible d’opinions est favorisée en même temps qu’une prise de conscience de la convergence et/ou divergence de ces opinions.

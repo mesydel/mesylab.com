@@ -5,48 +5,103 @@ const renderTags = (tags) => tags
   .map((tag) => `<span class="blog-tag">${escapeHtml(tag)}</span>`)
   .join('')
 
-const renderPostCard = (post) => `
-      <article class="blog-card">
-        <div class="blog-card__header">
+const renderMeta = (post) => `
           <div class="blog-card__meta">
             ${post.displayDate ? `<time datetime="${escapeHtml(post.date)}">${escapeHtml(post.displayDate)}</time>` : ''}
             ${post.author ? `<span class="blog-author">By ${escapeHtml(post.author)}</span>` : ''}
+            ${post.readingTime ? `<span class="blog-readtime">${post.readingTime} min read</span>` : ''}
+          </div>`
+
+const renderThumb = (post, extraClass = '') => post.cardImage
+  ? `<a class="blog-card__media ${extraClass}" href="${escapeHtml(post.url)}" tabindex="-1" aria-hidden="true">
+        <img src="${escapeHtml(post.cardImage)}" alt="" loading="lazy" decoding="async">
+      </a>`
+  : `<a class="blog-card__media blog-card__media--placeholder ${extraClass}" href="${escapeHtml(post.url)}" tabindex="-1" aria-hidden="true">
+        <span>${escapeHtml((post.title || '?').trim().charAt(0).toUpperCase())}</span>
+      </a>`
+
+const renderPostCard = (post) => `
+      <article class="blog-card">
+        ${renderThumb(post)}
+        <div class="blog-card__body">
+          <div class="blog-card__header">
+            ${renderMeta(post)}
+            ${post.project ? `<a class="blog-project-badge" href="${escapeHtml(post.project.url)}">${escapeHtml(post.project.title)}</a>` : ''}
           </div>
-          ${post.project ? `<a class="blog-project-badge" href="${escapeHtml(post.project.url)}">${escapeHtml(post.project.title)}</a>` : ''}
-        </div>
-        <h2><a href="${escapeHtml(post.url)}">${escapeHtml(post.title)}</a></h2>
-        <p>${escapeHtml(post.description)}</p>
-        ${post.tags.length ? `
-          <div class="blog-card__tags">
-            <div class="blog-tags">
-              ${renderTags(post.tags)}
+          <h2><a href="${escapeHtml(post.url)}">${escapeHtml(post.title)}</a></h2>
+          <p>${escapeHtml(post.description)}</p>
+          ${post.tags.length ? `
+            <div class="blog-card__tags">
+              <div class="blog-tags">
+                ${renderTags(post.tags)}
+              </div>
             </div>
+          ` : ''}
+          <div class="blog-card__footer">
+            <a href="${escapeHtml(post.url)}">Read the post</a>
           </div>
-        ` : ''}
-        <div class="blog-card__footer">
-          <a href="${escapeHtml(post.url)}">Read the post</a>
         </div>
       </article>
     `
 
-const buildIndexPage = (posts) => {
-  const cards = posts.length
-    ? posts.map(renderPostCard).join('')
-    : '<div class="blog-empty">No posts have been published yet.</div>'
+const renderFeaturedCard = (post) => `
+      <article class="blog-featured">
+        ${renderThumb(post, 'blog-featured__media')}
+        <div class="blog-featured__body">
+          <div class="blog-card__header">
+            ${renderMeta(post)}
+            ${post.project ? `<a class="blog-project-badge" href="${escapeHtml(post.project.url)}">${escapeHtml(post.project.title)}</a>` : ''}
+          </div>
+          <h2 class="blog-featured__title"><a href="${escapeHtml(post.url)}">${escapeHtml(post.title)}</a></h2>
+          <p class="blog-featured__excerpt">${escapeHtml(post.description)}</p>
+          ${post.tags.length ? `<div class="blog-tags">${renderTags(post.tags)}</div>` : ''}
+          <div class="blog-card__footer">
+            <a href="${escapeHtml(post.url)}">Read the post</a>
+          </div>
+        </div>
+      </article>
+    `
 
-  return `<!DOCTYPE html>
+const renderChips = (projectsWithPosts, activeSlug, totalCount) => `
+          <nav class="blog-chips" aria-label="Filter posts by project">
+            <a class="blog-chip${activeSlug ? '' : ' is-active'}" href="${blogMeta.blogUrl}">All<span class="blog-chip__count">${totalCount}</span></a>
+            ${projectsWithPosts.map((project) => `
+            <a class="blog-chip${activeSlug === project.slug ? ' is-active' : ''}" href="${escapeHtml(project.filterUrl)}">${escapeHtml(project.title)}<span class="blog-chip__count">${project.count}</span></a>`).join('')}
+          </nav>`
+
+const listingHead = (pageTitle, pageDescription, canonicalUrl) => `<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>${escapeHtml(blogMeta.blogTitle)} | ${escapeHtml(blogMeta.siteName)}</title>
-    <meta name="description" content="${escapeHtml(blogMeta.blogDescription)}">
-    <link rel="canonical" href="${escapeHtml(createCanonicalUrl(blogMeta.blogUrl))}">
-    <meta property="og:title" content="${escapeHtml(blogMeta.blogTitle)}">
-    <meta property="og:description" content="${escapeHtml(blogMeta.blogDescription)}">
+    <title>${escapeHtml(pageTitle)} | ${escapeHtml(blogMeta.siteName)}</title>
+    <meta name="description" content="${escapeHtml(pageDescription)}">
+    <link rel="canonical" href="${escapeHtml(createCanonicalUrl(canonicalUrl))}">
+    <meta property="og:title" content="${escapeHtml(pageTitle)}">
+    <meta property="og:description" content="${escapeHtml(pageDescription)}">
     <meta property="og:type" content="website">
     <link rel="stylesheet" href="${blogMeta.themeCssUrl}">
-  </head>
+  </head>`
+
+const buildListingPage = ({ posts, activeProject, projectsWithPosts, totalCount, canonicalUrl }) => {
+  const heading = activeProject ? activeProject.title : 'All posts'
+  const eyebrow = activeProject ? 'Project' : 'Archive'
+  const pageTitle = activeProject ? `${activeProject.title} posts` : blogMeta.blogTitle
+  const pageDescription = activeProject
+    ? `Posts about ${activeProject.title} from ${blogMeta.siteName}.`
+    : blogMeta.blogDescription
+  const useFeatured = posts.length >= 3
+  const featured = useFeatured ? posts[0] : null
+  const gridPosts = useFeatured ? posts.slice(1) : posts
+
+  const body = posts.length
+    ? `${featured ? renderFeaturedCard(featured) : ''}
+          <div class="blog-grid">
+            ${gridPosts.map(renderPostCard).join('')}
+          </div>`
+    : '<div class="blog-empty">No posts have been published yet.</div>'
+
+  return `${listingHead(pageTitle, pageDescription, canonicalUrl)}
   <body>
     <div class="blog-shell">
       <main class="blog-main">
@@ -72,14 +127,13 @@ const buildIndexPage = (posts) => {
         <section id="all-posts" class="blog-content">
           <div class="blog-section-heading">
             <div>
-              <p class="blog-section-heading__eyebrow">Archive</p>
-              <h2 class="blog-section-heading__title">All posts</h2>
+              <p class="blog-section-heading__eyebrow">${escapeHtml(eyebrow)}</p>
+              <h2 class="blog-section-heading__title">${escapeHtml(heading)}</h2>
             </div>
-            <p class="blog-section-heading__copy">${posts.length} published post${posts.length === 1 ? '' : 's'}</p>
+            <p class="blog-section-heading__copy">${posts.length} post${posts.length === 1 ? '' : 's'}</p>
           </div>
-          <div class="blog-grid">
-            ${cards}
-          </div>
+          ${renderChips(projectsWithPosts, activeProject ? activeProject.slug : null, totalCount)}
+          ${body}
         </section>
       </main>
 
@@ -96,6 +150,22 @@ const buildIndexPage = (posts) => {
 </html>
 `
 }
+
+const buildIndexPage = (posts, projectsWithPosts) => buildListingPage({
+  posts,
+  activeProject: null,
+  projectsWithPosts,
+  totalCount: posts.length,
+  canonicalUrl: blogMeta.blogUrl
+})
+
+const buildProjectPage = (posts, project, projectsWithPosts, totalCount) => buildListingPage({
+  posts,
+  activeProject: project,
+  projectsWithPosts,
+  totalCount,
+  canonicalUrl: project.filterUrl
+})
 
 const buildPostPage = (post) => `<!DOCTYPE html>
 <html lang="en">
@@ -144,6 +214,7 @@ const buildPostPage = (post) => `<!DOCTYPE html>
             <div class="blog-post-meta">
               ${post.displayDate ? `<time datetime="${escapeHtml(post.date)}">${escapeHtml(post.displayDate)}</time>` : ''}
               ${post.author ? `<span class="blog-author">By ${escapeHtml(post.author)}</span>` : ''}
+              ${post.readingTime ? `<span class="blog-readtime">${post.readingTime} min read</span>` : ''}
               ${post.tags.length ? `
                 <div class="blog-tags">
                   ${renderTags(post.tags)}
@@ -177,5 +248,6 @@ const buildPostPage = (post) => `<!DOCTYPE html>
 
 module.exports = {
   buildIndexPage,
+  buildProjectPage,
   buildPostPage
 }

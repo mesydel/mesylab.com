@@ -41,6 +41,17 @@ const buildPost = (markdownFilePath) => {
   const image = typeof data.image === 'string' && data.image.trim()
     ? rewriteContentUrl(data.image.trim(), relativePath)
     : null
+  // Card thumbnail: explicit hero if set, else the first in-body image.
+  const firstBodyImage = (content.match(/!\[[^\]]*]\(([^)\s]+)/) || [])[1]
+  const cardImage = image ||
+    (firstBodyImage ? rewriteContentUrl(firstBodyImage, relativePath) : null)
+  const wordCount = content
+    .replace(/```[\s\S]*?```/g, ' ')
+    .replace(/!\[[^\]]*]\([^)]*\)/g, ' ')
+    .replace(/[#>*_`~|-]+/g, ' ')
+    .split(/\s+/)
+    .filter(Boolean).length
+  const readingTime = Math.max(1, Math.round(wordCount / 200))
   const renderer = createMarkdownRenderer(relativePath)
   const html = sanitizeRenderedHtml(renderer.render(content))
   const url = `/blog/${slug}/`
@@ -57,6 +68,8 @@ const buildPost = (markdownFilePath) => {
     project,
     author,
     image,
+    cardImage,
+    readingTime,
     draft: data.draft === true,
     html
   }

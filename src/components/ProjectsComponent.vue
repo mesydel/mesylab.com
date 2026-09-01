@@ -32,8 +32,42 @@
           </div>
         </div>
 
-        <!-- Projects Section -->
+        <!-- Latest Articles -->
         <div class="border-t border-gray-200 pt-10">
+          <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between mb-2">
+            <h2 class="text-2xl font-bold text-gray-900">Latest articles</h2>
+            <a href="/blog/" class="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-secondary transition-colors">
+              Browse all posts
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+
+          <p v-if="isLoadingBlog" class="mt-4 text-sm text-gray-500">Loading the latest posts...</p>
+          <p v-else-if="blogError" class="mt-4 text-sm text-error">{{ blogError }}</p>
+
+          <ul v-else-if="latestPosts.length" class="mt-4 divide-y divide-gray-100">
+            <li v-for="post in latestPosts" :key="post.slug">
+              <a :href="post.url"
+                 class="group flex flex-col gap-1 py-3 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
+                <span class="font-medium text-gray-900 group-hover:text-primary transition-colors">
+                  {{ post.title }}
+                </span>
+                <span class="flex shrink-0 items-center gap-2 text-xs text-gray-400">
+                  <time>{{ formatPostDate(post.date) }}</time>
+                  <span v-if="post.project" class="font-medium text-secondary">{{ post.project.title }}</span>
+                  <span v-if="post.readingTime">· {{ post.readingTime }} min</span>
+                </span>
+              </a>
+            </li>
+          </ul>
+
+          <p v-else class="mt-4 text-sm text-gray-500">No blog posts have been published yet.</p>
+        </div>
+
+        <!-- Projects Section -->
+        <div class="border-t border-gray-200 pt-10 mt-10">
           <h2 class="text-2xl font-bold text-gray-900 mb-2">Projects</h2>
           <p class="text-gray-600 mb-8 max-w-2xl">
             A selection of projects delivered for Mesylab clients, research partners, and government institutions.
@@ -82,67 +116,6 @@
           </div>
         </div>
 
-        <div class="border-t border-gray-200 pt-10 mt-10">
-          <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <h2 class="text-2xl font-bold text-gray-900">From the blog</h2>
-              <p class="text-gray-600 max-w-2xl">
-              </p>
-            </div>
-            <a href="/blog/" class="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-secondary transition-colors">
-              Browse all posts
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-              </svg>
-            </a>
-          </div>
-
-          <p v-if="isLoadingBlog" class="mt-6 text-sm text-gray-500">
-            Loading the latest posts...
-          </p>
-
-          <p v-else-if="blogError" class="mt-6 text-sm text-error">
-            {{ blogError }}
-          </p>
-
-          <div v-else-if="latestPosts.length" class="mt-6 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-            <article
-              v-for="post in latestPosts"
-              :key="post.slug"
-              class="rounded-xl border border-gray-100 bg-white p-6 shadow-sm"
-            >
-              <div class="flex flex-wrap items-center gap-3 text-xs text-gray-500">
-                <time>{{ formatPostDate(post.date) }}</time>
-                <a
-                  v-if="post.project"
-                  :href="post.project.url"
-                  class="font-medium text-primary hover:text-secondary transition-colors"
-                >
-                  {{ post.project.title }}
-                </a>
-                <span
-                  v-for="tag in post.tags"
-                  :key="tag"
-                  class="rounded-full bg-gray-100 px-2.5 py-1 font-medium text-gray-600"
-                >
-                  {{ tag }}
-                </span>
-              </div>
-              <h3 class="mt-4 text-lg font-semibold text-gray-900">
-                <a :href="post.url" class="hover:text-primary transition-colors">
-                  {{ post.title }}
-                </a>
-              </h3>
-              <p class="mt-3 text-sm leading-6 text-gray-600">
-                {{ post.description }}
-              </p>
-            </article>
-          </div>
-
-          <p v-else class="mt-6 text-sm text-gray-500">
-            No blog posts have been published yet.
-          </p>
-        </div>
       </div>
     </div>
   </template>
