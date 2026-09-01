@@ -18,11 +18,11 @@ The **Institute of Environment and Sustainable Development (IMDO)** of the Unive
 - Exploration of new energy trajectories to achieve a set of 8 objectives for 2050
 - Assessment of the consequences and implications of these scenarios by a multi-criteria assessment framework
 
-## **Our partner**
+## Our partner
 
 The **Institute of Environment and Sustainable Development (IMDO)** of the University of Antwerpen is the main coordinator of the research project *SEPIA, Sustainable Energy Policy Integrated Assessment — A normative contribution to decision support*. The SEPIA project took place from January 2008 to December 2010. The research center IMDO offers multidisciplinary research and education programs that aim to support the complex challenges of society, industry and authorities on sustainability questions. The interdisciplinary nature and the need of co-construction in this foresight exercise made Mesydel essential to facilitate the participatory phase of the SEPIA project.
 
-## **Context**
+## Context
 
 In common with all industrialised nations, Belgium is currently locked into an energy and carbon intensive economic system. The most important energy technologies, institutions, infrastructure and networks have evolved in this particular context. Keeping this in mind, achieving a sustainable and low-carbon energy future will **require** **new ways of thinking** about the energy system, levels of demand for energy services and how this demand should be met.
 
@@ -32,17 +32,17 @@ The SEPIA project addresses such needs in the field of long-term energy policy. 
 
 Although part of the project results are contingent on specifics of the Belgian context, the project is embedded in the wider context of European and global energy system governance debates.
 
-## **Mesydel intervention**
+## Mesydel intervention
 
-For the foresight exercise, two groups of participants were created : a Scenario Builder Group (SBG) and a Stakeholder Panel (SHP). The methodology involved 4 main steps. Mesydel was used in the second and third steps to choose/classify factors and construct scenarios skeletons with the Scenario Builder Group.
+For the foresight exercise, two groups of participants were created: a Scenario Builder Group (SBG) and a Stakeholder Panel (SHP). The methodology involved 4 main steps. Mesydel was used in the second and third steps to choose/classify factors and construct scenarios skeletons with the Scenario Builder Group.
 
 ![](assets/foresight-renewable-energy/01.png)
 1. **Collection and elaboration of factors influencing energy system development:** A first workshop with the SBG and SHP panels leads to the definition and exploration of 50 major factors having an impact on energy system. Among these 50 factors, the 22 most important were selected, regarding the development objectives fixed for 2050.
 2. **Internet consultation for the selection of 6 most influential factors:** the online consultation was conducted with the SBG group. It was used to achieve a cross-impact analysis of interdependencies between factors, using a 22x22 matrix. Factors were then classified depending on their relations to others: determinant, strategic, regulatory, dependent or autonomous factors. 6 factors were selected based on this first classification.
-3. **Co-construction of scenarios with the Scenario Building Group:** A second round of questions allowed a co-construction of scenario skeletons using these 6 most influential factors. As a mathematical approach would have been too time- and resources-consuming, a more intuitive manner of proceeding was chosen: the experts regrouped consistent hypothesis to attain the 8 sustainability objectives. The combinations were taken as a basis for 3 final possible scenarios. Each of them were then completed with hypotheses on other factors and a backcasting process of the necessary policy interventions needed on the Belgian level.
-4. **Deliberative feedback on scenarios storyline:** A second workshop was conducted based on these online results to construct a value tree and factsheets explaining each indicators, data sources and measurements. Both the SHP and SBG panels were involved.
+3. **Co-construction of scenarios with the Scenario Building Group:** A second round of questions allowed a co-construction of scenario skeletons using these 6 most influential factors. As a mathematical approach would have been too time- and resources-consuming, a more intuitive manner of proceeding was chosen: the experts regrouped consistent hypotheses to attain the 8 sustainability objectives. The combinations were taken as a basis for 3 final possible scenarios. Each of them were then completed with hypotheses on other factors and a backcasting process of the necessary policy interventions needed on the Belgian level.
+4. **Deliberative feedback on scenarios storyline:** A second workshop was conducted based on these online results to construct a value tree and factsheets explaining each indicator, data source and measurement. Both the SHP and SBG panels were involved.
 
-## **Results**
+## Results
 
 The consultation was conducted among a large and fragmented group of experts and policymakers having overloaded agendas, organisation-specific expectations and performance criteria. However Mesydel contributed to this important foresight exercise achieving three major results:
 
@@ -54,7 +54,7 @@ The consultation was conducted among a large and fragmented group of experts and
 
 **Mesydel.com**
 
-## Références
+## References
 
 Access documentation of the project:
 

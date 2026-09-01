@@ -17,7 +17,7 @@ Geographic information, whether in paper form or computerized form, is increasin
 2. to bring the tools and data produced closer to the expectations and needs of users,
 3. to reach an agreement on the standardization of the production of geographic information in order to be able to compare and integrate data.
 
-Mesydel platform was used for a two-round survey of stakeholders (companies and public organizations) to achieve these goals :
+Mesydel platform was used for a two-round survey of stakeholders (companies and public organizations) to achieve these goals:
 
 - Decision support in the context of a rapidly changing sector
 - Harmonization and standardization of methods among a wide range of actors
@@ -35,7 +35,7 @@ The rapidly expanding geomatic sector has profoundly changed the practices of bo
 Since the adoption of the Walloon Geographic Information Infrastructure Decree (InfraSIG) on December 22nd, 2010, the Walloon Region is committed to developing the necessary tools for the geomatics transition. In this context, the Public Service of Wallonia wished to develop a **Strategic Plan for Walloon geomatics**, which aims to operationalize the InfraSIG Decree. The design of this plan faced three main challenges:
 
 1. **Coordinating a very disparate set of actors:** a clear diagnosis was needed, of the geomatics stakeholders, how they work and what are their expectations of the tools developed by the Department.
-2. **Harmonizing and optimize evolving practices:** many problems or slowdowns are linked to inaccurate, misused or underutilized geographic data. The SPW therefore wished to develop technical devices to operationalize the coordination and diffusion of this information.
+2. **Harmonizing and optimizing evolving practices:** many problems or slowdowns are linked to inaccurate, misused or underutilized geographic data. The SPW therefore wished to develop technical devices to operationalize the coordination and diffusion of this information.
 3. **Standardizing information produced for integration purposes:** due to the disparity of the production methods and the media (papers, software) used, databases are difficult to integrate. The objective was twofold: to agree on a way of structuring information; and to ensure that the tools and practices of each are recognized and integrated by the new structure.
 
 ## Mesydel intervention
@@ -55,9 +55,9 @@ The survey made it possible to approach users of geographic tools and data very 
 - **Overview of the heterogeneity of geomatics actors, tools and practices.** Some fractures have been identified, between types of users and between territories. A typology has thus been obtained according to the way in which the actors use the geographical information. The qualitative analysis allows to approach precisely the users, to understand and justify their choices and their needs: more or less strong skills, strategies of arrangements and games between different tools, ease of access to certain databases, etc. Recommendations could be provided on this basis to redefine the objectives of the Walloon Geoportal, the website of Walloon geographic information, in order to better link it to these clearly defined target audiences.
 - **Identification of priorities for the future development of Walloon geomatics strategy** and, in particular, for its operationalization. Users’ expectations have been highlighted, both in terms of the data themselves and of the technical processes and tools related to their production and analysis.
 - **Definition of a software strategy.** The consultation highlighted what worked well in the existing practices and the complementarity of the tools in order to enhance them. It helped to identify areas for improvement and to explore the question of switching to Open Source, directly with the concerned actors. The question of the tools’ over-dimensioning has been documented in relation to the different profiles and the different expectations of the actors. The results of the survey are valuable prerequisites for the drafting of a genuine software policy at the scale of Wallonia, with the aim of making geomatics more accessible.
-- **Definition of a strategy for standardization and integration of geodata.** The means of participation in crowd-sourcing were evaluated. Several very technical aspects were discussed with the participants, notably concerning the right balance between quality and availability of data, the importance of meta data in decision-making and the phenomenon of data scarcity that occurred in some specific cases. A classification and data organization structure has thus emerged, based on the usage (analytical, legal, reality) that the concerned actors have and will have.
+- **Definition of a strategy for standardization and integration of geodata.** The means of participation in crowd-sourcing were evaluated. Several very technical aspects were discussed with the participants, notably concerning the right balance between quality and availability of data, the importance of metadata in decision-making and the phenomenon of data scarcity that occurred in some specific cases. A classification and data organization structure has thus emerged, based on the usage (analytical, legal, reality) that the concerned actors have and will have.
 
-## **Contact**
+## Contact
 
 Mesydel.com
 

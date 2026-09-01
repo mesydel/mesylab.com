@@ -24,21 +24,15 @@ L’outil Mesydel a été utilisé pour une enquête en deux tours auprès des a
 - Sensibilisation de la société wallonne aux atouts de la géomatique
 - Sondage de la dimension participative des approches géomatiques
 
-Voir la vidéo du projet :
+Voir la vidéo du projet : [L'ULg au service de la géomatique wallonne](https://www.ulg.ac.be/cms/c_3818999/fr/l-ulg-au-service-de-la-geomatique-wallonne).
 
-## L'ULg au service de la géomatique wallonne
-
-### Site institutionnel de l'Université de Liège. Seule université publique complète de la Communauté française de Belgique…
-
-www.ulg.ac.be
-
-## **Le commanditaire**
+## Le commanditaire
 
 Le Département de la Géomatique est un service du Service Public de Wallonie (SPW), l’administration centrale de la Région wallonne (Belgique). Il représente la Wallonie au niveau régional, interrégional, national et international dans les domaines techniques relatifs à l’information géographique. Il est le coordinateur principal des communautés d’utilisateurs et s’occupe notamment de formations, sensibilisations, projets de recherche, journées d’études, etc. Au sein de ce département, la Direction de l’Intégration des Géodonnées (DIG) s’occupe plus spécifiquement de la mise en oeuvre de la directive européenne Inspire et du décret relatif à l’infrastructure d’information géographique wallonne. La DIG assure la diffusion des données, promeut le rôle de la géomatique dans les processus décisionnels et coordonne la production et l’utilisation des données et outils à composante géographique.
 
-## C **ontexte**
+## Contexte
 
-Le secteur de la géomatique en pleine expansion a profondément modifié les pratiques des acteurs, qu’ils soient publics ou privés.**Les usages sont en forte évolution et chacun développe des modes de fonctionnement et des outils propres, qu’il importe d’harmoniser.** L’information géographique est de plus en plus utilisée, et les nouveaux outils d’acquisition et de traitement posent de nouveaux enjeux techniques, à la fois au niveau de l’intégration de bases de données disparates et au niveau de la qualité de l’information traitée (actualisation en temps réel, précision des données, etc).
+Le secteur de la géomatique en pleine expansion a profondément modifié les pratiques des acteurs, qu’ils soient publics ou privés. **Les usages sont en forte évolution et chacun développe des modes de fonctionnement et des outils propres, qu’il importe d’harmoniser.** L’information géographique est de plus en plus utilisée, et les nouveaux outils d’acquisition et de traitement posent de nouveaux enjeux techniques, à la fois au niveau de l’intégration de bases de données disparates et au niveau de la qualité de l’information traitée (actualisation en temps réel, précision des données, etc).
 
 Dès l’adoption du Décret relatif à l’infrastructure d’information géographique wallonne, dit “InfraSIG” du 22 décembre 2010, la Région wallonne s’est engagée dans le développement des outils nécessaires à la transition géomatique. Dans ce cadre, le Service Public de Wallonie a souhaité développer un **Plan stratégique pour la géomatique wallonne** qui vise à opérationnaliser le Décret InfraSIG. La conception de ce plan faisait face à trois principaux défis :
 
@@ -46,7 +40,7 @@ Dès l’adoption du Décret relatif à l’infrastructure d’information géog
 2. **Accorder et optimiser des pratiques en grande évolution :** en effet, de nombreux problèmes ou ralentissements sont liés à des données géographiques imprécises, mal utilisées ou sous-exploitées. Le SPW souhaitait donc développer des dispositifs techniques pour opérationnaliser la coordination et la diffusion de ces informations.
 3. **Normaliser l’information produite dans un objectif d’intégration :** en raison de la disparité des modes de production et des supports (papiers, logiciels) utilisés, les bases de données sont difficilement intégrables. L’objectif était donc double : s’accorder sur une façon de structurer l’information ; et s’assurer que les outils et pratiques de chacun soient reconnus et intégrés par la nouvelle structure.
 
-## L’**intervention de Mesydel**
+## L’intervention de Mesydel
 
 La consultation a pris la forme d’une enquête qualitative en deux tours, un premier tour en mai 2013 et un second tour en juin 2013. L’intervention de Mesydel s’est déroulée en 5 grandes étapes :
 
@@ -56,7 +50,7 @@ La consultation a pris la forme d’une enquête qualitative en deux tours, un p
 4. **Second tour de questionnaire :** le second tour a été utilisé pour creuser les points problématiques ou mal documentés qui étaient ressortis lors du premier tour. Des aspects plus techniques ont été abordés avec les participants, notamment sur les justifications de leurs pratiques, ou sur la dimension participative des outils, c’est-à-dire la manière dont chacun s’approprie les outils et s’implique dans la production et l’analyse de l’information géographique.
 5. **Synthèse finale :** les informations recueillies auprès du panel de participants ont servi de support pour la construction d’un état des lieux et des grandes lignes d’action pour le Plan Stratégique du Département de Géomatique.
 
-## **Résultats obtenus**
+## Résultats obtenus
 
 L’enquête a permis d’approcher de très près les utilisateurs d’outils et de données géographiques en Région wallonne, d’obtenir une vue précise des principaux enjeux que supposent leurs usages et de co-construire une ligne stratégique pour la coordination d’un secteur en forte évolution.
 
@@ -67,8 +61,8 @@ L’enquête a permis d’approcher de très près les utilisateurs d’outils e
 
 ## Contact
 
-[Mesydel.com](http://https//mesydel.com)
+[Mesydel.com](https://mesydel.com)
 
 ## Références
 
-Fallon, C. et Calay, V. La participation des usagers comme levier de l’innovation dans les services publics : le cas de la géométique wallonne. Pyramides, 2016, 26/27, pp.231–254, [http://pyramides.revues.org/1014](http://pyramides.revues.org/1014).
+Fallon, C. et Calay, V. La participation des usagers comme levier de l’innovation dans les services publics : le cas de la géomatique wallonne. Pyramides, 2016, 26/27, pp.231–254, [http://pyramides.revues.org/1014](http://pyramides.revues.org/1014).

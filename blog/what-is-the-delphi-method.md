@@ -13,11 +13,11 @@ tags:
 
 The Delphi method is a structured communication technique originally developed as a method of systematic and interactive forecasting based on a panel of experts.
 
-> “The Delphi method is a qualitative and qualitative prospective tool, consisting of an aggregation of (experts) opinions. It is a systematic method of formal questionnaire interrogation using intuitive judgement and knowledge of a panel which is geographically dispersed, used to make predictions by expressing rational opinions on questions where there is no absolute answer “- Ieroncig, 1983
+> “The Delphi method is a qualitative and quantitative prospective tool, consisting of an aggregation of (experts) opinions. It is a systematic method of formal questionnaire interrogation using intuitive judgement and knowledge of a panel which is geographically dispersed, used to make predictions by expressing rational opinions on questions where there is no absolute answer “- Ieroncig, 1983
 
 There are many applications for this method, depending on the field — medicine, psychology, education sciences, management, economics, social sciences, etc. — or on the objective of the consultation: technological innovations, anticipation of a market or trend, strategic prospecting, participative management, participative design, etc.
 
-## **The main characteristics of the methodology**
+## The main characteristics of the methodology
 
 The Delphi method usually takes the form of a written questionnaire. This allows for anonymous and independent consultation and debate, thus avoiding pitfalls of direct confrontations, both social (e.g. power relations in a group) and practical (time-consuming activity, especially when it comes to geographically dispersed participants). The responses are only visible to the moderator and not to the participants, to avoid self-moderation bias.
 
@@ -25,13 +25,13 @@ In summary, the method allows an iterative consultation of experts and/or stakeh
 
 **Consensus / dissension**
 
-The method has been constructed to encourage consensus on specific themes such as priority setting, technological foresight, or decisions about certain technical or medical issues. More precisely, the Delphi method creates conditions that are favourable to a convergence of opinions, while at the same time making it possible to clearly discern the points of dissension. The study of the latter is important, as it legitimize the method and often leads to redefining the initial problem, again leading to consensus. Also, the key feature of the Delphi method is its controlled feedback process through several rounds.
+The method has been constructed to encourage consensus on specific themes such as priority setting, technological foresight, or decisions about certain technical or medical issues. More precisely, the Delphi method creates conditions that are favourable to a convergence of opinions, while at the same time making it possible to clearly discern the points of dissension. The study of the latter is important, as it legitimizes the method and often leads to redefining the initial problem, again leading to consensus. Also, the key feature of the Delphi method is its controlled feedback process through several rounds.
 
 **Multiple rounds and controlled feedback**
 
 Unlike conventional surveys, the Delphi method consists of an iterative and interactive consultation: a panel of participants is consulted during several rounds, and in each of these rounds the panel receives the results from the previous round. They position themselves again in regard to the previous results (controlled feedback process). In addition to giving their opinion, participants should provide additional feedback to justify their responses. It is also important to preserve the anonymity of respondents. By combining closed questions (e.g. multiple choice) and open questions, the Delphi method produces both quantitative and qualitative results.
 
-## **When to use it?**
+## When to use it?
 
 As a didactic process, the Delphi method has been designed to offer the benefits of sharing and exchanging opinions, so that respondents can discover the opinions of others, without excessive influence of visual confrontations (which are usually dominated by those who speak powerfully or have the most prestige). The technique allows participants to deal with a complex problem in a systematic way. During each round, the relevant information is shared and enriches the knowledge of the panel members. They are then in a position to make recommendations based on more complete information.
 
