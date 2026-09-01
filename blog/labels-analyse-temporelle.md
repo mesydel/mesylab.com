@@ -14,7 +14,7 @@ Un corpus ne se réduit pas à un ensemble de textes : il rassemble souvent des 
 
 Corpus permet d'exploiter cette dimension temporelle grâce aux **labels de type date**.
 
-![Schéma : un label de date ancre chaque texte sur un axe temporel, accessible dans toutes les vues d'analyse*](https://i.imgur.com/mrGFdGb.png)
+
 
 ---
 
@@ -23,6 +23,7 @@ Corpus permet d'exploiter cette dimension temporelle grâce aux **labels de type
 Les labels servent de champs de métadonnées attachés à chaque texte d'une collection. Corpus en propose trois types : texte libre, nombre entier, et **date et heure**. Ce dernier stocke une date précise — de publication, d'entretien, de jugement — rattachée à un document.
 
 ![](https://i.imgur.com/4pB3NhQ.png)
+![Schéma : un label de date ancre chaque texte sur un axe temporel, accessible dans toutes les vues d'analyse*](https://i.imgur.com/mrGFdGb.png)
 ![](https://i.imgur.com/ccLRwQi.png)
 
 
