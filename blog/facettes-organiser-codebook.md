@@ -4,6 +4,7 @@ title: "Organiser son codebook avec les facettes"
 sidebar: auto
 author: Martin Erpicum
 category: Article
+lang: fr
 project: corpus
 tags:
   - corpus

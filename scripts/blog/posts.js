@@ -38,6 +38,9 @@ const buildPost = (markdownFilePath) => {
   const author = typeof data.author === 'string' && data.author.trim()
     ? data.author.trim()
     : null
+  const lang = typeof data.lang === 'string' && data.lang.trim()
+    ? data.lang.trim()
+    : (tags.includes('Français') ? 'fr' : 'en')
   const image = typeof data.image === 'string' && data.image.trim()
     ? rewriteContentUrl(data.image.trim(), relativePath)
     : null
@@ -67,6 +70,7 @@ const buildPost = (markdownFilePath) => {
     tags,
     project,
     author,
+    lang,
     image,
     cardImage,
     readingTime,

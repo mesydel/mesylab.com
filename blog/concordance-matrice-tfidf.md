@@ -4,6 +4,7 @@ title: "Concordance, matrice et TF-IDF : aller au-delà du comptage"
 sidebar: auto
 author: Martin Erpicum
 category: Article
+lang: fr
 project: corpus
 tags:
   - corpus

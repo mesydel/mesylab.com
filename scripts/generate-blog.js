@@ -1,10 +1,47 @@
 const fs = require('fs')
 const path = require('path')
 
-const { blogOutputDir, blogSourceDir } = require('./blog/config')
+const { blogOutputDir, blogSourceDir, rootDir } = require('./blog/config')
 const { ensureDirectory, walkDirectory, writeFile } = require('./blog/file-system')
 const { buildPost, validatePosts } = require('./blog/posts')
 const { buildIndexPage, buildPostPage, buildProjectPage } = require('./blog/templates')
+const { toAbsoluteUrl } = require('./blog/utils')
+
+const publicDir = path.join(rootDir, 'public')
+
+const buildSitemap = (posts, projectsWithPosts) => {
+  const entries = [
+    { loc: '/', changefreq: 'monthly', priority: '0.8' },
+    { loc: '/blog/', changefreq: 'weekly', priority: '0.7' },
+    ...projectsWithPosts.map((project) => ({
+      loc: `/blog/project/${project.slug}/`, changefreq: 'weekly', priority: '0.5'
+    })),
+    ...posts.map((post) => ({
+      loc: post.url, lastmod: post.date || undefined, changefreq: 'yearly', priority: '0.6'
+    }))
+  ]
+
+  const urls = entries.map((entry) => [
+    '  <url>',
+    `    <loc>${toAbsoluteUrl(entry.loc)}</loc>`,
+    entry.lastmod ? `    <lastmod>${entry.lastmod}</lastmod>` : null,
+    `    <changefreq>${entry.changefreq}</changefreq>`,
+    `    <priority>${entry.priority}</priority>`,
+    '  </url>'
+  ].filter(Boolean).join('\n')).join('\n')
+
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls}
+</urlset>
+`
+}
+
+const buildRobots = () => `User-agent: *
+Allow: /
+
+Sitemap: ${toAbsoluteUrl('/sitemap.xml')}
+`
 
 const buildProjectsWithPosts = (posts) => {
   const byslug = new Map()
@@ -95,6 +132,9 @@ const generateBlog = () => {
       buildProjectPage(projectPosts, project, projectsWithPosts, posts.length)
     )
   })
+
+  writeFile(path.join(publicDir, 'sitemap.xml'), buildSitemap(posts, projectsWithPosts))
+  writeFile(path.join(publicDir, 'robots.txt'), buildRobots())
 }
 
 generateBlog()

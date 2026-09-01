@@ -4,6 +4,7 @@ title: "Analyser l'évolution d'un corpus dans le temps avec les labels de date"
 sidebar: auto
 author: Martin Erpicum
 category: Article
+lang: fr
 project: corpus
 tags:
   - corpus

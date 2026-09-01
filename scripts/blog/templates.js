@@ -1,5 +1,67 @@
 const { blogMeta } = require('./config')
-const { createCanonicalUrl, escapeHtml } = require('./utils')
+const { escapeHtml, toAbsoluteUrl } = require('./utils')
+
+const OG_LOCALE = { fr: 'fr_FR', en: 'en_US' }
+
+// Shared <head> content (SEO + Open Graph + Twitter) for every page kind.
+// `extra` holds page-specific tags (article metadata, JSON-LD).
+const renderHead = ({ title, description, canonical, ogType, locale, image, twitterCard, extra = '' }) => `
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>${escapeHtml(title)} | ${escapeHtml(blogMeta.siteName)}</title>
+    <meta name="description" content="${escapeHtml(description)}">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="${escapeHtml(canonical)}">
+    <meta property="og:type" content="${ogType}">
+    <meta property="og:site_name" content="${escapeHtml(blogMeta.siteName)}">
+    <meta property="og:locale" content="${locale}">
+    <meta property="og:url" content="${escapeHtml(canonical)}">
+    <meta property="og:title" content="${escapeHtml(title)}">
+    <meta property="og:description" content="${escapeHtml(description)}">
+    ${image ? `<meta property="og:image" content="${escapeHtml(image)}">` : ''}
+    <meta name="twitter:card" content="${twitterCard}">
+    <meta name="twitter:title" content="${escapeHtml(title)}">
+    <meta name="twitter:description" content="${escapeHtml(description)}">
+    ${image ? `<meta name="twitter:image" content="${escapeHtml(image)}">` : ''}
+    ${extra}
+    <link rel="stylesheet" href="${blogMeta.themeCssUrl}">`
+
+// Serialise a JSON-LD object, escaping '<' so it can't break out of the script tag.
+const renderJsonLd = (data) =>
+  `<script type="application/ld+json">${JSON.stringify(data).replace(/</g, '\\u003c')}</script>`
+
+const buildArticleJsonLd = (post) => {
+  const url = toAbsoluteUrl(post.url)
+  const data = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    description: post.description,
+    inLanguage: post.lang || 'en',
+    datePublished: post.date || undefined,
+    dateModified: post.date || undefined,
+    author: post.author
+      ? { '@type': 'Person', name: post.author }
+      : { '@type': 'Organization', name: blogMeta.siteName },
+    publisher: {
+      '@type': 'Organization',
+      name: blogMeta.siteName,
+      logo: { '@type': 'ImageObject', url: toAbsoluteUrl(blogMeta.logoUrl) }
+    },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+    url
+  }
+
+  if (post.image) {
+    data.image = [toAbsoluteUrl(post.image)]
+  }
+
+  if (post.tags && post.tags.length) {
+    data.keywords = post.tags.join(', ')
+  }
+
+  return renderJsonLd(data)
+}
 
 const renderTags = (tags) => tags
   .map((tag) => `<span class="blog-tag">${escapeHtml(tag)}</span>`)
@@ -71,16 +133,14 @@ const renderChips = (projectsWithPosts, activeSlug, totalCount) => `
 
 const listingHead = (pageTitle, pageDescription, canonicalUrl) => `<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>${escapeHtml(pageTitle)} | ${escapeHtml(blogMeta.siteName)}</title>
-    <meta name="description" content="${escapeHtml(pageDescription)}">
-    <link rel="canonical" href="${escapeHtml(createCanonicalUrl(canonicalUrl))}">
-    <meta property="og:title" content="${escapeHtml(pageTitle)}">
-    <meta property="og:description" content="${escapeHtml(pageDescription)}">
-    <meta property="og:type" content="website">
-    <link rel="stylesheet" href="${blogMeta.themeCssUrl}">
+  <head>${renderHead({
+    title: pageTitle,
+    description: pageDescription,
+    canonical: toAbsoluteUrl(canonicalUrl),
+    ogType: 'website',
+    locale: OG_LOCALE.en,
+    twitterCard: 'summary'
+  })}
   </head>`
 
 const buildListingPage = ({ posts, activeProject, projectsWithPosts, totalCount, canonicalUrl }) => {
@@ -167,20 +227,33 @@ const buildProjectPage = (posts, project, projectsWithPosts, totalCount) => buil
   canonicalUrl: project.filterUrl
 })
 
-const buildPostPage = (post) => `<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>${escapeHtml(post.title)} | ${escapeHtml(blogMeta.siteName)}</title>
-    <meta name="description" content="${escapeHtml(post.description)}">
-    <link rel="canonical" href="${escapeHtml(createCanonicalUrl(post.url))}">
-    <meta property="og:title" content="${escapeHtml(post.title)}">
-    <meta property="og:description" content="${escapeHtml(post.description)}">
-    <meta property="og:type" content="article">
-    ${post.date ? `<meta property="article:published_time" content="${escapeHtml(post.date)}">` : ''}
-    ${post.image ? `<meta property="og:image" content="${escapeHtml(post.image)}">` : ''}
-    <link rel="stylesheet" href="${blogMeta.themeCssUrl}">
+const buildPostPage = (post) => {
+  const canonical = toAbsoluteUrl(post.url)
+  const absImage = post.image ? toAbsoluteUrl(post.image) : null
+
+  const articleMeta = [
+    post.author && `<meta name="author" content="${escapeHtml(post.author)}">`,
+    post.tags.length && `<meta name="keywords" content="${escapeHtml(post.tags.join(', '))}">`,
+    post.date && `<meta property="article:published_time" content="${escapeHtml(post.date)}">`,
+    post.date && `<meta property="article:modified_time" content="${escapeHtml(post.date)}">`,
+    post.author && `<meta property="article:author" content="${escapeHtml(post.author)}">`,
+    post.project && `<meta property="article:section" content="${escapeHtml(post.project.title)}">`,
+    ...post.tags.map((tag) => `<meta property="article:tag" content="${escapeHtml(tag)}">`),
+    buildArticleJsonLd(post)
+  ].filter(Boolean).join('\n    ')
+
+  return `<!DOCTYPE html>
+<html lang="${escapeHtml(post.lang || 'en')}">
+  <head>${renderHead({
+    title: post.title,
+    description: post.description,
+    canonical,
+    ogType: 'article',
+    locale: OG_LOCALE[post.lang] || OG_LOCALE.en,
+    image: absImage,
+    twitterCard: absImage ? 'summary_large_image' : 'summary',
+    extra: articleMeta
+  })}
   </head>
   <body>
     <div class="blog-shell">
@@ -245,6 +318,7 @@ const buildPostPage = (post) => `<!DOCTYPE html>
   </body>
 </html>
 `
+}
 
 module.exports = {
   buildIndexPage,

@@ -7,6 +7,7 @@ const projects = require(path.join(rootDir, 'src', 'data', 'projects.json'))
 
 const blogMeta = {
   siteName: 'Mesylab SRL',
+  siteUrl: 'https://www.mesylab.com',
   homeUrl: '/',
   blogUrl: '/blog/',
   logoUrl: '/mesylab-logo.svg',

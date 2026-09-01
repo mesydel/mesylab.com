@@ -116,7 +116,17 @@ const createExcerpt = (content, fallbackTitle) => {
     : plainText
 }
 
-const createCanonicalUrl = (pathname) => pathname
+const toAbsoluteUrl = (value) => {
+  if (!value) {
+    return value
+  }
+
+  if (/^https?:\/\//i.test(value)) {
+    return value
+  }
+
+  return `${blogMeta.siteUrl}${value.startsWith('/') ? '' : '/'}${value}`
+}
 
 const resolveProjectReference = (value) => {
   if (typeof value !== 'string' || !value.trim()) {
@@ -138,7 +148,6 @@ const resolveProjectReference = (value) => {
 }
 
 module.exports = {
-  createCanonicalUrl,
   createExcerpt,
   createSlug,
   escapeHtml,
@@ -147,5 +156,6 @@ module.exports = {
   parseDateValue,
   resolveProjectReference,
   rewriteContentUrl,
-  splitUrl
+  splitUrl,
+  toAbsoluteUrl
 }
