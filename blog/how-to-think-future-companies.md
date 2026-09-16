@@ -36,7 +36,7 @@ In an economic world in permanent mutation(s), companies must not be reactive to
 
 **Tools exist to conduct systemic and participatory corporate foresight activities at a larger scale and to co-create new solutions for a future that is much more supported by the concerned actors.** Such tools are developed in universities, administrations and associations. Therefore, it is essential to reconsider dimensions included in these strategic future-thinking activities.
 
-Among these solutions, we believe **Mesydel is an effective tool to conduct such activities.** Mesydel is an online consultation tool that implements the principles of the [Delphi method](https://blog.mesydel.com/what-is-the-delphi-method-and-what-is-it-used-for-feb2d26f917a) and facilitates the organisation and analysis of such survey.
+Among these solutions, we believe **Mesydel is an effective tool to conduct such activities.** Mesydel is an online consultation tool that implements the principles of the [Delphi method](what-is-the-delphi-method.md) and facilitates the organisation and analysis of such survey.
 
 ## Why Mesydel is an adequate tool in this precise case?
 
@@ -74,6 +74,6 @@ Using Mesydel to build a shared vision of the future of a company can elaborate 
 
 **Of course, reality is much more complex and this generic process must be tailored to the company’s needs.** Moreover, these three phases can sometimes overlap in the same round of questions, due to a particular situation.
 
-**If you want to know more about Mesydel,** [**visit our website**](http://www.mesydel.com/)**!**
+**If you want to know more about Mesydel,** [**visit our website**](https://mesydel.com)**!**
 
 *This post does not consider several methodological questions regarding to choices in terms of participants and panel, of the timing of the survey, of the time horizon towards which a company wants to project itself or the pre-survey process. These questions must not be overlooked and must be systematically tackled by the people in charge of the survey.

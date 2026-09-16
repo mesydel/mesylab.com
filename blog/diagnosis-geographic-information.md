@@ -63,6 +63,6 @@ Mesydel.com
 
 ## References
 
-Video describing the project (in French) : [https://www.ulg.ac.be/cms/c_3818999/fr/l-ulg-au-service-de-la-geomatique-wallonne](https://www.ulg.ac.be/cms/c_3818999/fr/l-ulg-au-service-de-la-geomatique-wallonne)
+Video describing the project (in French) : "L’ULg au service de la géomatique wallonne" (ULg).
 
 Scientific article (in French) : [http://pyramides.revues.org/1014](http://pyramides.revues.org/1014)

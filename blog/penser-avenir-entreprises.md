@@ -35,7 +35,7 @@ Dans un monde économique en mutation(s) permanente(s), il importe aux entrepris
 
 **Des outils existent pour mener ces exercices de prospective systémique tout en favorisant la participation à grande échelle et la co-création de solutions nouvelles pour un futur qui prend mieux en compte l’avis des personnes concernées.** Ils sont développés dans des universités, dans des administrations ou dans des associations. En ce sens, il est essentiel de revoir les dimensions prises en compte dans ces réflexions stratégiques pour reconstruire leur avenir.
 
-Parmi ces solutions, nous pensons que **Mesydel est une solution efficace pour mener ce type de démarche**. Pour rappel, Mesydel est un outil de consultation en ligne qui implémente les principes d’une méthode particulière ([la méthode Delphi](https://blog.mesydel.com/la-m%C3%A9thode-delphi-un-outil-puissant-dintelligence-collective-ea58d08aa68a)) et facilite l’organisation et l’analyse de ce type d’enquête.
+Parmi ces solutions, nous pensons que **Mesydel est une solution efficace pour mener ce type de démarche**. Pour rappel, Mesydel est un outil de consultation en ligne qui implémente les principes d’une méthode particulière ([la méthode Delphi](methode-delphi-intelligence-collective.md)) et facilite l’organisation et l’analyse de ce type d’enquête.
 
 ## Pourquoi Mesydel est un outil approprié dans ce cas précis ?
 
@@ -72,6 +72,6 @@ Utiliser Mesydel pour construire une vision partagée sur le futur d’une entre
 
 **Bien sûr, la réalité est plus complexe et ce simple processus nécessite d’être adapté aux besoins d’une entreprise particulière.** De plus, les trois phases peuvent parfois se superposer au sein d’un même questionnaire en raison d’un contexte spécifique.
 
-**Si vous souhaitez en savoir plus sur Mesydel et ses activités,** [**visitez notre site web**](http://www.mesydel.com/)**!**
+**Si vous souhaitez en savoir plus sur Mesydel et ses activités,** [**visitez notre site web**](https://mesydel.com)**!**
 
 *Cet article n’aborde pas une série d’autres questions méthodologiques relatives au choix du panel de participants, à la période d’organisation de l’enquête, à l’horizon temporel vers lequel l’entreprise souhaite se projeter ou les activités préparatoires au lancement de l’enquête. Ces multiples questions ne doivent pas être éludées et doivent être systématiquement considérées par les personnes en charge de l’enquête.

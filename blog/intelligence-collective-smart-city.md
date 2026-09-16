@@ -61,6 +61,6 @@ ROSANVALLON, Pierre, 2010, *La légitimité démocratique : Impartialité, réfl
 
 SALMINEN, Juho, « Collective intelligence in humans: a literature review », Lappeenranta University of Technology, 2012, 8p.
 
-[https://www.un.org/development/desa/publications/world-population-prospects-the-2017-revision.html](https://www.un.org/development/desa/publications/world-population-prospects-the-2017-revision.html)
+NATIONS UNIES, Département des affaires économiques et sociales, *World Population Prospects: The 2017 Revision*, New York, 2017.
 
-[https://www.un.org/development/desa/fr/news/population/2018-world-urbanization-prospects.html](https://www.un.org/development/desa/fr/news/population/2018-world-urbanization-prospects.html)
+NATIONS UNIES, Département des affaires économiques et sociales, *World Urbanization Prospects: The 2018 Revision*, New York, 2018.

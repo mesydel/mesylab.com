@@ -24,7 +24,7 @@ L’outil Mesydel a été utilisé pour une enquête en deux tours auprès des a
 - Sensibilisation de la société wallonne aux atouts de la géomatique
 - Sondage de la dimension participative des approches géomatiques
 
-Voir la vidéo du projet : [L'ULg au service de la géomatique wallonne](https://www.ulg.ac.be/cms/c_3818999/fr/l-ulg-au-service-de-la-geomatique-wallonne).
+Vidéo du projet : « L'ULg au service de la géomatique wallonne » (ULg).
 
 ## Le commanditaire
 

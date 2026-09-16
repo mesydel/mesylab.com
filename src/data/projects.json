@@ -29,12 +29,12 @@
   {
     "slug": "legaltech-lab",
     "title": "LegalTech Lab",
-    "href": "https://legaltech.uliege.be/",
+    "href": "",
     "description": "Interdisciplinary research center at the University of Liège exploring the intersection of law and technology. Focus areas include legal AI, access to justice, and digital rights.",
     "year_started": 2020,
     "year_ended": 2025,
     "categories": ["Research", "Law"],
-    "blog_url": "https://legaltech.uliege.be/"
+    "blog_url": ""
   },
   {
     "slug": "pipelette",
@@ -134,6 +134,15 @@
     "title": "Ecoles FWB",
     "href": "https://www.tintamarre.be/ecoles/",
     "description": "Trouvez des informations sur les 8377 etablissements d'enseignement en Federation Wallonie-Bruxelles.",
+    "year_started": 2026,
+    "categories": ["FLOSS"],
+    "blog_url": ""
+  },
+  {
+    "slug": "bibli",
+    "title": "Bibli",
+    "href": "",
+    "description": "Management tool for a small school library: catalogue, copies, borrowers and loans. Ships as a single binary with a single database file, so it runs anywhere without a server or setup.",
     "year_started": 2026,
     "categories": ["FLOSS"],
     "blog_url": ""
