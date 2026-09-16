@@ -16,13 +16,13 @@ tags:
 
 **Bibli** est une petite application écrite pour la bibliothèque de l'école de Lincé. L'objectif est de gérer environ deux mille livres, deux cents élèves, quelques dizaines de prêts par semaine. Tenue uniquement par des enseignants et des bénévoles, l'objectif est de rester simple et accessible.
 
-C'est cette dernière phrase qui a décidé de tout le reste. J'ai essayé de m'en tenir à une question : qu'est-ce qui casse dans cinq ans si plus personne n'y touche ? Un binaire Go, un fichier SQLite, la bibliothèque standard, HTMX pour l'interactivité — le tout versionné dans le dépôt, aucun CDN, une seule dépendance de production. Rien d'original, et c'est un peu l'idée : sauvegarder, c'est copier un fichier.
+C'est cette dernière phrase qui a décidé les choix techniques pour ce projet. J'ai essayé de m'en tenir à une question : qu'est-ce qui casse dans cinq ans si plus personne n'y touche ? Un binaire Go, un fichier SQLite, la bibliothèque standard, HTMX pour l'interactivité — le tout versionné dans le dépôt, aucun CDN, une seule dépendance de production. Rien d'original, et c'est un peu l'idée : sauvegarder, c'est copier un fichier.
 
 ![Les prêts en cours](assets/bibli/hero.png)
 
 ## Au comptoir
 
-Un prêt se fait avec une douchette USB à 30 €, qui se comporte comme un clavier. On scanne la carte de l'élève, puis les livres. L'écran rappelle ce que l'enfant a déjà emprunté, et signale ses retards avant qu'on lui en confie un de plus. Le retour ne demande que le code-barres du livre.
+Un prêt se fait avec une douchette USB à 30 €, qui se comporte comme un clavier, ou via la camera d'un smartphone ou d'une tablette. On scanne la carte de l'élève, puis les livres. L'écran rappelle ce que l'enfant a déjà emprunté, et signale ses retards avant qu'on lui en confie un de plus. Le retour ne demande que le code-barres du livre.
 
 ![L'écran d'emprunt](assets/bibli/01.png)
 
@@ -32,11 +32,11 @@ Une caméra de tablette fonctionne aussi, mais la douchette reste plus rapide qu
 
 C'est l'endroit où je me suis trompé en premier. Le code-barres au dos d'un livre est toujours un EAN-13, mais les ouvrages d'avant 2007 ont été catalogués sous ISBN-10, et beaucoup de notices ne sont indexées que sous cette forme-là. Interroger un catalogue avec la seule valeur scannée laisse de côté une partie du fonds — la partie ancienne, c'est-à-dire l'essentiel d'une bibliothèque d'école.
 
-Bibli calcule donc les deux formes et interroge avec les deux : la BnF d'abord, puis UniCat pour les éditions belges, Google Books et Open Library ensuite. La fiche arrive pré-remplie, on la corrige, on indique le nombre d'exemplaires.
+Bibli calcule donc les deux formes et interroge avec les deux : la [BnF](https://www.bnf.fr) d'abord, puis [UniCat](https://www.unicat.be) pour les éditions belges, Google Books et Open Library ensuite. La fiche arrive pré-remplie, on la corrige, on indique le nombre d'exemplaires.
 
 ![La fiche après le scan d'un ISBN](assets/bibli/02.png)
 
-Il reste 10 à 15 % d'introuvables — albums pour tout-petits, petits éditeurs, livres anciens. La saisie manuelle est donc à un clic, et ce n'est pas un chemin de secours : c'est un chemin normal.
+Sur mes tests, il reste 3 à 7% d'introuvables — albums pour tout-petits, petits éditeurs, livres anciens. La saisie manuelle est donc à un clic, et ce n'est pas un chemin de secours : c'est un chemin normal.
 
 Les étiquettes s'impriment par quatre dans la largeur d'une A4, avec la cote tirée du titre. Les cartes d'élèves, par classe.
 
