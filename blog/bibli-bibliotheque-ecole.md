@@ -7,7 +7,7 @@ category: Article
 lang: fr
 project: bibli
 description: "Un binaire, un fichier SQLite, six écrans. Notes sur une application écrite pour la bibliothèque d'une école primaire."
-image: assets/bibli/hero.png
+image: assets/bibli/scan-smartphone.jpg
 tags:
   - bibli
   - go

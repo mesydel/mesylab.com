@@ -7,7 +7,7 @@ category: Article
 lang: en
 project: bibli
 description: "One binary, one SQLite file, six screens. Notes on an application written for a primary school library."
-image: assets/bibli/hero.png
+image: assets/bibli/scan-smartphone.jpg
 tags:
   - bibli
   - go
