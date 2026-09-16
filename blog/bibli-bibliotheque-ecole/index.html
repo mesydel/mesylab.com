@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bibli : une petite application pour la bibliothèque d&#39;une école | Mesylab SRL</title>
+    <meta name="description" content="Un binaire, un fichier SQLite, six écrans. Notes sur une application écrite pour la bibliothèque d&#39;une école primaire.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://www.mesylab.com/blog/bibli-bibliotheque-ecole/">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Mesylab SRL">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:url" content="https://www.mesylab.com/blog/bibli-bibliotheque-ecole/">
+    <meta property="og:title" content="Bibli : une petite application pour la bibliothèque d&#39;une école">
+    <meta property="og:description" content="Un binaire, un fichier SQLite, six écrans. Notes sur une application écrite pour la bibliothèque d&#39;une école primaire.">
+    <meta property="og:image" content="https://www.mesylab.com/blog/assets/bibli/scan-smartphone.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bibli : une petite application pour la bibliothèque d&#39;une école">
+    <meta name="twitter:description" content="Un binaire, un fichier SQLite, six écrans. Notes sur une application écrite pour la bibliothèque d&#39;une école primaire.">
+    <meta name="twitter:image" content="https://www.mesylab.com/blog/assets/bibli/scan-smartphone.jpg">
+    <meta name="author" content="Martin Erpicum">
+    <meta name="keywords" content="bibli, go, sqlite">
+    <meta property="article:published_time" content="2026-09-16">
+    <meta property="article:modified_time" content="2026-09-16">
+    <meta property="article:author" content="Martin Erpicum">
+    <meta property="article:section" content="Bibli">
+    <meta property="article:tag" content="bibli">
+    <meta property="article:tag" content="go">
+    <meta property="article:tag" content="sqlite">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Bibli : une petite application pour la bibliothèque d'une école","description":"Un binaire, un fichier SQLite, six écrans. Notes sur une application écrite pour la bibliothèque d'une école primaire.","inLanguage":"fr","datePublished":"2026-09-16","dateModified":"2026-09-16","author":{"@type":"Person","name":"Martin Erpicum"},"publisher":{"@type":"Organization","name":"Mesylab SRL","logo":{"@type":"ImageObject","url":"https://www.mesylab.com/mesylab-logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.mesylab.com/blog/bibli-bibliotheque-ecole/"},"url":"https://www.mesylab.com/blog/bibli-bibliotheque-ecole/","image":["https://www.mesylab.com/blog/assets/bibli/scan-smartphone.jpg"],"keywords":"bibli, go, sqlite"}</script>
+    <link rel="stylesheet" href="/blog-theme.css">
+  </head>
+  <body>
+    <div class="blog-shell">
+      <main class="blog-main">
+        <header class="blog-header">
+          <div class="blog-topbar">
+            <a class="blog-brand" href="/" aria-label="Back to Mesylab SRL">
+              <img class="blog-logo" src="/mesylab-logo.svg" alt="Mesylab SRL">
+              <span class="blog-brand__text">Mesylab SRL</span>
+            </a>
+            <nav class="blog-nav" aria-label="Blog navigation">
+              <a href="/blog/">All posts</a>
+            </nav>
+          </div>
+        </header>
+
+        <section class="blog-content">
+          <div class="blog-backlink">
+            <a href="/blog/">Back to all posts</a>
+          </div>
+          <article class="blog-article">
+            <div class="blog-article__header">
+              <div class="blog-article__heading">
+                <p class="blog-eyebrow">Mesylab</p>
+                <h1 class="blog-title">Bibli : une petite application pour la bibliothèque d&#39;une école</h1>
+              </div>
+              
+                <a class="blog-project-badge" href="/#project-bibli">Bibli</a>
+              
+            </div>
+            <div class="blog-post-meta">
+              <time datetime="2026-09-16">September 16, 2026</time>
+              <span class="blog-author">By Martin Erpicum</span>
+              <span class="blog-readtime">3 min read</span>
+              
+                <div class="blog-tags">
+                  <span class="blog-tag">bibli</span><span class="blog-tag">go</span><span class="blog-tag">sqlite</span>
+                </div>
+              
+            </div>
+            
+              <figure class="blog-hero-image">
+                <img src="/blog/assets/bibli/scan-smartphone.jpg" alt="Bibli : une petite application pour la bibliothèque d&#39;une école">
+              </figure>
+            
+            <div class="blog-prose">
+              <p><strong>Bibli</strong> est une petite application écrite pour la bibliothèque de l’école de Lincé. L’objectif est de gérer environ deux mille livres, deux cents élèves, quelques dizaines de prêts par semaine. Tenue uniquement par des enseignants et des bénévoles, l’objectif est de rester simple et accessible.</p>
+<p>C’est cette dernière phrase qui a décidé les choix techniques pour ce projet. J’ai essayé de m’en tenir à une question : qu’est-ce qui casse dans cinq ans si plus personne n’y touche ? Un binaire Go, un fichier SQLite, la bibliothèque standard, HTMX pour l’interactivité — le tout versionné dans le dépôt, aucun CDN, une seule dépendance de production. Rien d’original, et c’est un peu l’idée : sauvegarder, c’est copier un fichier.</p>
+<p><img src="/blog/assets/bibli/hero.png" alt="Les prêts en cours" loading="lazy" decoding="async" /></p>
+<h2>Au comptoir</h2>
+<p>Un prêt se fait avec une douchette USB à 30 €, qui se comporte comme un clavier, ou via la caméra d’un smartphone ou d’une tablette. On scanne la carte de l’élève, puis les livres. L’écran rappelle ce que l’enfant a déjà emprunté, et signale ses retards avant qu’on lui en confie un de plus. Le retour ne demande que le code-barres du livre.</p>
+<p><img src="/blog/assets/bibli/01.png" alt="L'écran d'emprunt" loading="lazy" decoding="async" /></p>
+<h2>L’ISBN, et sa deuxième forme</h2>
+<p>C’est l’endroit où je me suis trompé en premier. Le code-barres au dos d’un livre est toujours un EAN-13, mais les ouvrages d’avant 2007 ont été catalogués sous ISBN-10, et beaucoup de notices ne sont indexées que sous cette forme-là. Interroger un catalogue avec la seule valeur scannée laisse de côté une partie du fonds — la partie ancienne, c’est-à-dire l’essentiel d’une bibliothèque d’école.</p>
+<p>Bibli calcule donc les deux formes et interroge avec les deux : la <a href="https://www.bnf.fr" rel="noopener noreferrer">BnF</a> d’abord, puis <a href="https://www.unicat.be" rel="noopener noreferrer">UniCat</a> pour les éditions belges, Google Books et Open Library ensuite. La fiche arrive pré-remplie, on la corrige, on indique le nombre d’exemplaires.</p>
+<p><img src="/blog/assets/bibli/02.png" alt="La fiche après le scan d'un ISBN" loading="lazy" decoding="async" /></p>
+<p>Sur mes tests, il reste 3 à 7% d’introuvables — albums pour tout-petits, petits éditeurs, livres anciens. La saisie manuelle est donc à un clic, et ce n’est pas un chemin de secours : c’est un chemin normal.</p>
+<p>Les étiquettes s’impriment par quatre dans la largeur d’une A4, avec la cote tirée du titre. Les cartes d’élèves, par classe.</p>
+<p><img src="/blog/assets/bibli/03.png" alt="Les étiquettes d'exemplaires" loading="lazy" decoding="async" /></p>
+<p><img src="/blog/assets/bibli/04.png" alt="Les cartes d'emprunteurs" loading="lazy" decoding="async" /></p>
+<h2>Le moins de données possible</h2>
+<p>Ce sont des données de mineurs, donc l’application enregistre le prénom, l’initiale du nom et la classe. Rien d’autre : pas de date de naissance, pas d’adresse, pas d’e-mail, pas de photo. « Durant » devient « D. ». Si la base fuite un jour, elle reste à peine identifiante.</p>
+<p>L’historique de prêts, lui, en dit long sur un enfant : au-delà d’un délai réglable — trois ans par défaut — les prêts rendus sont réattribués à un emprunteur anonyme. Le lien entre l’enfant et ses lectures disparaît, le livre garde son compteur.</p>
+<p>Les parents n’ont pas de compte : un lien secret par élève, distribué à la main, montre ce que l’enfant a en cours. Rien n’est envoyé, aucune adresse n’est stockée.</p>
+<p><img src="/blog/assets/bibli/05.png" alt="Le lien de suivi, sur un téléphone" loading="lazy" decoding="async" /></p>
+<p>Et seul un ISBN quitte l’école : les couvertures sont cherchées par le serveur, jamais par le navigateur d’un élève.</p>
+<h2>Ce que je n’ai pas fait</h2>
+<p>Pas de réservations, pas de catalogue public, pas de notifications automatiques aux parents, pas de comptes élèves, pas d’amendes. Moins par principe que par prudence : chaque écran en plus est un écran à expliquer à quelqu’un qui ne l’a pas demandé, et à réparer quand je ne serai plus là.</p>
+<p>L’application n’a pas encore vécu. Les vraies questions — quelle durée de prêt, combien de livres à la fois, ce qu’on fait d’un livre perdu — attendent quelques semaines d’usage réel, et se régleront sans doute autrement que ce que j’ai prévu.</p>
+<p>C’est du logiciel libre, sous AGPL-3.0 ; le dépôt sera ouvert prochainement.</p>
+<p>Si une autre école voulait l’essayer, ou si vous avez une remarque sur la façon dont c’est fait, écrivez-moi. Ça m’intéresse surtout de savoir ce qui manque une fois devant de vrais élèves.</p>
+
+            </div>
+          </article>
+        </section>
+      </main>
+
+      <footer class="blog-footer">
+        <div class="blog-footer__inner">
+          <p><a href="/blog/">Back to the blog index</a></p>
+          <div class="blog-footer__links">
+            <a href="/">Home</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
