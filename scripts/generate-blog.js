@@ -1,7 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 
-const { blogOutputDir, blogSourceDir, rootDir } = require('./blog/config')
+const { blogOutputDir, blogSourceDir, rootDir, unpublishedSourceExtensions } = require('./blog/config')
 const { ensureDirectory, walkDirectory, writeFile } = require('./blog/file-system')
 const { buildPost, validatePosts } = require('./blog/posts')
 const { buildIndexPage, buildPostPage, buildProjectPage } = require('./blog/templates')
@@ -78,7 +78,7 @@ const excludeDrafts = process.env.BLOG_EXCLUDE_DRAFTS === 'true'
 
 const copyAssets = (sourceFiles) => {
   sourceFiles
-    .filter((filePath) => path.extname(filePath).toLowerCase() !== '.md')
+    .filter((filePath) => !unpublishedSourceExtensions.has(path.extname(filePath).toLowerCase()))
     .forEach((filePath) => {
       const relativePath = path.relative(blogSourceDir, filePath)
       const outputPath = path.join(blogOutputDir, relativePath)

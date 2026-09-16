@@ -26,6 +26,13 @@ const markdownImageExtensions = new Set([
   '.webp'
 ])
 
+// Authoring sources that live next to the posts but are never published:
+// posts themselves, and diagram sources exported to .svg by `make diagrams`.
+const unpublishedSourceExtensions = new Set([
+  '.drawio',
+  '.md'
+])
+
 const projectMap = new Map(projects.map((project) => [project.slug, project]))
 
 module.exports = {
@@ -34,5 +41,6 @@ module.exports = {
   blogSourceDir,
   markdownImageExtensions,
   projectMap,
-  rootDir
+  rootDir,
+  unpublishedSourceExtensions
 }
