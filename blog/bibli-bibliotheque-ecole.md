@@ -22,11 +22,11 @@ C'est cette dernière phrase qui a décidé les choix techniques pour ce projet.
 
 ## Au comptoir
 
-Un prêt se fait avec une douchette USB à 30 €, qui se comporte comme un clavier, ou via la camera d'un smartphone ou d'une tablette. On scanne la carte de l'élève, puis les livres. L'écran rappelle ce que l'enfant a déjà emprunté, et signale ses retards avant qu'on lui en confie un de plus. Le retour ne demande que le code-barres du livre.
+Un prêt se fait avec une douchette USB à 30 €, qui se comporte comme un clavier, ou via la caméra d'un smartphone ou d'une tablette. On scanne la carte de l'élève, puis les livres. L'écran rappelle ce que l'enfant a déjà emprunté, et signale ses retards avant qu'on lui en confie un de plus. Le retour ne demande que le code-barres du livre.
 
 ![L'écran d'emprunt](assets/bibli/01.png)
 
-Une caméra de tablette fonctionne aussi, mais la douchette reste plus rapide qu'un téléphone tenu par un enfant de huit ans.
+La douchette reste toutefois plus rapide qu'un téléphone tenu par un enfant de huit ans.
 
 ## L'ISBN, et sa deuxième forme
 
