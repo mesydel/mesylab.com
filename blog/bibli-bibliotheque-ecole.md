@@ -14,7 +14,7 @@ tags:
   - sqlite
 ---
 
-**Bibli** est une petite application écrite pour la bibliothèque de l'école de Lincé : environ deux mille livres, deux cents élèves, quelques dizaines de prêts par semaine. Elle est tenue par des enseignants et des bénévoles, et il n'y a pas d'informaticien sur place.
+**Bibli** est une petite application écrite pour la bibliothèque de l'école de Lincé. L'objectif est de gérer environ deux mille livres, deux cents élèves, quelques dizaines de prêts par semaine. Tenue uniquement par des enseignants et des bénévoles, l'objectif est de rester simple et accessible.
 
 C'est cette dernière phrase qui a décidé de tout le reste. J'ai essayé de m'en tenir à une question : qu'est-ce qui casse dans cinq ans si plus personne n'y touche ? Un binaire Go, un fichier SQLite, la bibliothèque standard, HTMX pour l'interactivité — le tout versionné dans le dépôt, aucun CDN, une seule dépendance de production. Rien d'original, et c'est un peu l'idée : sauvegarder, c'est copier un fichier.
 
