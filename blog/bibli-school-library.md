@@ -26,7 +26,6 @@ A loan is recorded with a €30 USB barcode scanner, which behaves like a keyboa
 
 ![The lending screen](assets/bibli/01.png)
 
-The scanner stays faster, though, than a phone held by an eight-year-old.
 
 ![Scanning a barcode with a phone (illustration)](assets/bibli/scan-smartphone.jpg)
 
