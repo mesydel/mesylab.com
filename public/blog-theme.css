@@ -588,6 +588,76 @@ code {
   color: #111827;
 }
 
+/* Inline links in article bodies: readable on their own (colour + underline),
+   not shouty. The underline sits below the baseline so accents stay legible. */
+.blog-prose a {
+  color: #1f7a6b;
+  text-decoration: underline;
+  text-decoration-color: rgba(42, 157, 143, 0.4);
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.18em;
+  text-decoration-skip-ink: auto;
+  border-radius: 0.2rem;
+  overflow-wrap: anywhere;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease,
+    text-decoration-thickness 0.15s ease, background-color 0.15s ease;
+}
+
+.blog-prose a:hover {
+  color: #264653;
+  text-decoration-color: #2a9d8f;
+  text-decoration-thickness: 0.12em;
+  background-color: rgba(42, 157, 143, 0.1);
+}
+
+.blog-prose a:visited {
+  color: #4a6b78;
+}
+
+.blog-prose a:visited:hover {
+  color: #264653;
+}
+
+.blog-prose a:focus-visible {
+  outline: 2px solid #2a9d8f;
+  outline-offset: 2px;
+  text-decoration-color: #2a9d8f;
+}
+
+/* Headings keep their own colour; the link only reveals itself on hover. */
+.blog-prose h1 a,
+.blog-prose h2 a,
+.blog-prose h3 a,
+.blog-prose h4 a,
+.blog-prose h5 a,
+.blog-prose h6 a {
+  color: inherit;
+  text-decoration-color: rgba(42, 157, 143, 0.35);
+}
+
+/* An <a> wrapping an image must not get text styling. */
+.blog-prose a:has(img) {
+  text-decoration: none;
+  background: none;
+}
+
+.blog-prose a > code {
+  color: inherit;
+}
+
+@media print {
+  .blog-prose a {
+    color: #111827;
+    background: none;
+  }
+
+  .blog-prose a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.85em;
+    color: #4b5563;
+  }
+}
+
 .blog-prose blockquote {
   margin-left: 0;
   padding-left: 1rem;
