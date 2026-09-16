@@ -141,10 +141,10 @@
   {
     "slug": "bibli",
     "title": "Bibli",
-    "href": "",
+    "href": "https://www.mesylab.com/blog/project/bibli/",
     "description": "Management tool for a small school library: catalogue, copies, borrowers and loans. Ships as a single binary with a single database file, so it runs anywhere without a server or setup.",
     "year_started": 2026,
     "categories": ["FLOSS"],
-    "blog_url": ""
+    "blog_url": "https://www.mesylab.com/blog/project/bibli"
   }
 ]
