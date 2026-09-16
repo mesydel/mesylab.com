@@ -26,7 +26,6 @@ Un prêt se fait avec une douchette USB à 30 €, qui se comporte comme un clav
 
 ![L'écran d'emprunt](assets/bibli/01.png)
 
-La douchette reste toutefois plus rapide qu'un téléphone tenu par un enfant de huit ans.
 
 ![Le scan d'un code-barres avec un smartphone (illustration)](assets/bibli/scan-smartphone.jpg)
 
