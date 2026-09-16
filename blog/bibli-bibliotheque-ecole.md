@@ -28,6 +28,8 @@ Un prêt se fait avec une douchette USB à 30 €, qui se comporte comme un clav
 
 La douchette reste toutefois plus rapide qu'un téléphone tenu par un enfant de huit ans.
 
+![Le scan d'un code-barres avec un smartphone (illustration)](assets/bibli/scan-smartphone.jpg)
+
 ## L'ISBN, et sa deuxième forme
 
 C'est l'endroit où je me suis trompé en premier. Le code-barres au dos d'un livre est toujours un EAN-13, mais les ouvrages d'avant 2007 ont été catalogués sous ISBN-10, et beaucoup de notices ne sont indexées que sous cette forme-là. Interroger un catalogue avec la seule valeur scannée laisse de côté une partie du fonds — la partie ancienne, c'est-à-dire l'essentiel d'une bibliothèque d'école.

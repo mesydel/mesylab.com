@@ -28,6 +28,8 @@ A loan is recorded with a €30 USB barcode scanner, which behaves like a keyboa
 
 The scanner stays faster, though, than a phone held by an eight-year-old.
 
+![Scanning a barcode with a phone (illustration)](assets/bibli/scan-smartphone.jpg)
+
 ## The ISBN, and its second form
 
 This is where I got it wrong first. The barcode on the back of a book is always an EAN-13, but books published before 2007 were catalogued under ISBN-10, and many records are indexed only in that form. Querying a catalogue with the scanned value alone leaves out part of the collection — the older part, which is most of a school library.
