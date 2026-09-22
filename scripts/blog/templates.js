@@ -265,15 +265,12 @@ const buildPostPage = (post) => {
               <span class="blog-brand__text">${escapeHtml(blogMeta.siteName)}</span>
             </a>
             <nav class="blog-nav" aria-label="Blog navigation">
-              <a href="${blogMeta.blogUrl}">All posts</a>
+              <a class="blog-nav__back" href="${blogMeta.blogUrl}"><span aria-hidden="true">&larr;</span> All posts</a>
             </nav>
           </div>
         </header>
 
         <section class="blog-content">
-          <div class="blog-backlink">
-            <a href="${blogMeta.blogUrl}">Back to all posts</a>
-          </div>
           <article class="blog-article">
             <div class="blog-article__header">
               <div class="blog-article__heading">
