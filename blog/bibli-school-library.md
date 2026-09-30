@@ -20,6 +20,12 @@ That last sentence decided the technical choices for this project. I tried to st
 
 ![Open loans](assets/bibli/hero.png)
 
+A two-minute walkthrough, on made-up data:
+
+[![Bibli — video demonstration](assets/bibli/video.jpg)](https://www.youtube.com/watch?v=Yo_IYGwo8sM)
+
+There is also a [live demo](https://bibli.tintamarre.be) (password `demo`) where everything is clickable — lending, cataloguing by ISBN, printing labels — and reset regularly.
+
 ## At the desk
 
 A loan is recorded with a €30 USB barcode scanner, which behaves like a keyboard, or with the camera of a phone or tablet. Scan the pupil's card, then the books. The screen recalls what the child already has out, and flags any overdue book before another one is handed over. A return needs nothing but the book's barcode.
@@ -58,8 +64,8 @@ And only an ISBN ever leaves the school: covers are fetched by the server, never
 
 No reservations, no public catalogue, no automatic emails to parents, no pupil accounts, no fines. Less out of principle than out of caution: every extra screen is a screen to explain to someone who did not ask for it, and to repair when I am no longer around.
 
-The application has not really been used yet. The real questions — how long a loan should run, how many books at a time, what to do with a lost book — are waiting on a few weeks of actual use, and will probably be settled differently from what I assumed.
+Real use is only just starting. The real questions — how long a loan should run, how many books at a time, what to do with a lost book — will probably be settled differently from what I assumed, once a few weeks have passed with real pupils in front of it.
 
-It is free software under the AGPL-3.0; the repository will be opened shortly.
+It is free software under the AGPL-3.0, and the code is open: [github.com/tintamarre/bibli](https://github.com/tintamarre/bibli). It can run on a single computer — a Mac, Windows or Linux app to download — or be deployed for a whole school; the repository explains how.
 
 If another school would like to try it, or if you have a remark on the way it is built, let me know. What interests me most is hearing what turns out to be missing once real pupils are in front of it.

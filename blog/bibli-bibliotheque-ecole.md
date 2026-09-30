@@ -20,6 +20,12 @@ C'est cette dernière phrase qui a décidé les choix techniques pour ce projet.
 
 ![Les prêts en cours](assets/bibli/hero.png)
 
+Une démonstration de deux minutes, sur des données fictives :
+
+[![Démonstration de Bibli en vidéo](assets/bibli/video.jpg)](https://www.youtube.com/watch?v=Yo_IYGwo8sM)
+
+Et une [instance de démonstration](https://bibli.tintamarre.be) (mot de passe `demo`) où tout est cliquable — prêter, cataloguer par ISBN, imprimer des étiquettes —, remise à zéro régulièrement.
+
 ## Au comptoir
 
 Un prêt se fait avec une douchette USB à 30 €, qui se comporte comme un clavier, ou via la caméra d'un smartphone ou d'une tablette. On scanne la carte de l'élève, puis les livres. L'écran rappelle ce que l'enfant a déjà emprunté, et signale ses retards avant qu'on lui en confie un de plus. Le retour ne demande que le code-barres du livre.
@@ -59,8 +65,8 @@ Et seul un ISBN quitte l'école : les couvertures sont cherchées par le serveur
 
 Pas de réservations, pas de catalogue public, pas de notifications automatiques aux parents, pas de comptes élèves, pas d'amendes. Moins par principe que par prudence : chaque écran en plus est un écran à expliquer à quelqu'un qui ne l'a pas demandé, et à réparer quand je ne serai plus là.
 
-L'application n'a pas encore vécu. Les vraies questions — quelle durée de prêt, combien de livres à la fois, ce qu'on fait d'un livre perdu — attendent quelques semaines d'usage réel, et se régleront sans doute autrement que ce que j'ai prévu.
+L'usage réel commence tout juste. Les vraies questions — quelle durée de prêt, combien de livres à la fois, ce qu'on fait d'un livre perdu — se régleront sans doute autrement que ce que j'ai prévu, une fois quelques semaines passées devant de vrais élèves.
 
-C'est du logiciel libre, sous AGPL-3.0 ; le dépôt sera ouvert prochainement.
+C'est du logiciel libre, sous AGPL-3.0, et le code est ouvert : [github.com/tintamarre/bibli](https://github.com/tintamarre/bibli). On peut l'installer sur un seul ordinateur — une application Mac, Windows ou Linux à télécharger — ou le déployer pour toute une école ; le dépôt explique comment.
 
 Si une autre école voulait l'essayer, ou si vous avez une remarque sur la façon dont c'est fait, écrivez-moi. Ça m'intéresse surtout de savoir ce qui manque une fois devant de vrais élèves.
