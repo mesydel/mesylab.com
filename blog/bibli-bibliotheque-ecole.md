@@ -6,7 +6,7 @@ author: Martin Erpicum
 category: Article
 lang: fr
 project: bibli
-description: "Prêter à la douchette, cataloguer par ISBN, imprimer les étiquettes : une application libre pour la bibliothèque d'une école, tenue par des bénévoles."
+description: "J'ai écrit une petite application pour la bibliothèque de l'école de Lincé. Voici ce qu'elle fait, et comment."
 image: assets/bibli/scan-smartphone.jpg
 tags:
   - bibli
@@ -14,72 +14,42 @@ tags:
   - sqlite
 ---
 
-**Bibli** est une application pour la bibliothèque d'une école. Je l'ai écrite pour celle de l'école de Lincé, en Belgique francophone : environ deux mille livres, deux cents élèves et quelques dizaines de prêts par semaine. Ce sont des enseignants et des bénévoles qui la font vivre, sans informaticien sur place.
+**Bibli** est une petite application que j'ai écrite pour la bibliothèque de l'école de Lincé. Environ trois mille livres, deux cents élèves et quelques dizaines de prêts par semaine. Ce sont des enseignants et des bénévoles qui s'en occupent, et il n'y a pas d'informaticien à l'école.
 
-On y prête et on rend des livres à la douchette, on catalogue un livre en scannant son ISBN, on imprime les étiquettes et les cartes d'élèves, on suit les retards. L'interface existe en français, en néerlandais et en anglais.
-
-![L'accueil de Bibli : emprunter, rendre, et les livres en rayon, en prêt et en retard](assets/bibli/home.png)
-
-Une démonstration de deux minutes, sur des données fictives :
+J'ai fait une vidéo de deux minutes sur des données fictives. Si vous préférez essayer vous-même, il y a une [instance de démonstration](https://bibli.tintamarre.be) (mot de passe `demo`).
 
 [![Démonstration de Bibli en vidéo](assets/bibli/video.jpg)](https://www.youtube.com/watch?v=Yo_IYGwo8sM)
 
-Il y a aussi une [instance de démonstration](https://bibli.tintamarre.be) (mot de passe `demo`) : une école fictive, où l'on peut tout essayer et qui est remise à zéro régulièrement.
+## Prêter et rendre
 
-## Au comptoir
+Au comptoir, on scanne la carte de l'élève puis ses livres, et on valide. Pour un retour, on scanne simplement le livre, sans avoir besoin de savoir qui l'avait. Une douchette USB à une trentaine d'euros suffit, puisqu'elle se fait passer pour un clavier. La caméra d'une tablette marche aussi. Quand un enfant a oublié sa carte, on tape sa classe et le début de son prénom.
 
-Le comptoir, ce sont deux écrans : *Emprunter* et *Rendre*. Pour un prêt, on scanne la carte de l'élève, puis ses livres, et on confirme une fois pour tout le panier. L'écran rappelle ce que l'enfant a déjà emprunté. Pour un retour, il suffit de scanner le livre.
-
-![L'écran de prêt : l'emprunteur, puis les livres scannés](assets/bibli/borrow.png)
-
-Une douchette USB d'entrée de gamme, autour de 30 €, fait l'affaire : elle se comporte comme un clavier et ne demande aucun réglage. La caméra d'un téléphone ou d'une tablette peut aussi servir. Un élève a oublié sa carte ? On tape sa classe et le début de son prénom (« P3 lé »). Une étiquette est illisible ? Quelques mots du titre suffisent.
+![L'écran de prêt](assets/bibli/borrow.png)
 
 ## Cataloguer
 
-On scanne l'ISBN au dos du livre, et Bibli interroge les catalogues : la [BnF](https://www.bnf.fr), [UniCat](https://www.unicat.be) pour les éditions belges, puis Google Books et Open Library. La fiche arrive pré-remplie, avec le titre, les auteurs, l'éditeur et la couverture. On vérifie, on indique le nombre d'exemplaires et, si on le souhaite, un emplacement (« Albums 3/5 », « classe P3 »).
+Quand on scanne l'ISBN d'un livre, Bibli va chercher la notice à la [BnF](https://www.bnf.fr), puis sur [UniCat](https://www.unicat.be) pour les éditions belges, et enfin chez Google Books et Open Library. La plupart du temps, la fiche arrive complète avec la couverture, et il n'y a plus qu'à dire combien d'exemplaires on a.
 
-![La fiche remplie depuis l'ISBN, avec sa couverture](assets/bibli/catalogue.png)
+C'est aussi là que je me suis trompé en premier. Le code-barres d'un livre est un ISBN-13, mais pour les livres d'avant 2007, les catalogues ne connaissent souvent que l'ancien ISBN-10. Dans une bibliothèque d'école, ces livres-là sont nombreux. Bibli essaie donc maintenant les deux formes. Il reste à peu près un livre sur dix qu'on ne trouve nulle part, surtout des albums pour les petits, et ceux-là s'encodent à la main.
 
-Le code-barres d'un livre est un ISBN-13, mais beaucoup de livres parus avant 2007 ne sont connus des catalogues que sous leur ancien ISBN-10. Bibli calcule donc les deux formes et cherche avec les deux, ce qui fait une vraie différence pour le fonds ancien.
+![La fiche d'un livre après le scan de son ISBN](assets/bibli/catalogue.png)
 
-Environ un livre sur dix n'est trouvé nulle part : albums pour tout-petits, petits éditeurs, livres anciens. La saisie à la main est prévue pour ça, et seul le titre est obligatoire. Un livre inconnu scanné au comptoir peut aussi être catalogué sur-le-champ, puis prêté dans la foulée.
+On n'est pas obligé de coller des étiquettes, parce qu'on peut prêter avec l'ISBN imprimé sur le livre. Elles servent surtout pour les livres sans code-barres, et pour ceux qu'on a en plusieurs exemplaires. Bibli les imprime sur des planches d'autocollants, avec un code-barres et la cote, c'est-à-dire les trois premières lettres de l'auteur (SAI pour Saint-Exupéry). Les cartes des élèves s'impriment de la même manière, classe par classe.
 
-## Étiquettes et cartes
+![Une planche d'étiquettes](assets/bibli/labels.png)
 
-On peut se passer d'étiquettes et prêter directement à l'ISBN. Elles deviennent utiles pour les livres sans code-barres et pour les titres en plusieurs exemplaires. Elles s'impriment sur des planches A4 autocollantes de 44 étiquettes, avec un code-barres, le titre et la cote. La cote, ce sont les trois premières lettres du nom de l'auteur, comme dans les bibliothèques publiques : SAI pour Saint-Exupéry.
-
-![Une planche d'étiquettes : titre, code-barres et cote](assets/bibli/labels.png)
-
-Les cartes d'élèves s'impriment par classe, sur les mêmes planches. Imprimée sur papier ordinaire, la page d'une classe devient une feuille à garder au comptoir pour les cartes oubliées.
-
-![Les cartes d'une classe : prénom, initiale et code-barres](assets/bibli/cards.png)
-
-## Au fil de l'année
-
-L'écran *Prêts* liste ce qui est sorti, classe par classe. Les retards s'impriment en une liste groupée par classe, à déposer dans chaque classe.
-
-![Les prêts en cours, groupés par classe puis par élève](assets/bibli/loans.png)
-
-L'inventaire liste tous les exemplaires, avec leur emplacement et leur état (abîmé, perdu, retiré du fonds). Trié par cote, il suit l'ordre des rayons. Les statistiques montrent les livres les plus empruntés et ceux qui ne sont jamais sortis. À la rentrée, un seul écran fait passer les classes à l'année suivante, et la liste des nouveaux élèves s'importe depuis un tableur.
-
-![L'inventaire, avec l'emplacement et l'état de chaque exemplaire](assets/bibli/inventory.png)
+Pour le reste de l'année, il y a une liste des retards à imprimer pour chaque classe, un inventaire, des statistiques sur les livres qui ne sortent jamais, et un écran pour faire passer tout le monde dans la classe suivante en septembre.
 
 ## Les données des enfants
 
-Pour un élève, Bibli enregistre un prénom, l'initiale du nom et une classe, rien de plus : si on tape « Durant », seul « D. » est gardé. Au bout de trois ans par défaut (c'est réglable), les prêts passés ne sont plus rattachés à l'enfant. Les livres, eux, gardent leur nombre d'emprunts.
+Je voulais garder le moins d'informations possible sur les élèves. Bibli ne connaît que le prénom, l'initiale du nom et la classe. Après trois ans, les anciens prêts sont détachés de l'enfant, et seul le livre garde son compteur. Si l'école le veut, les parents peuvent recevoir un lien qui montre ce que leur enfant a emprunté, sans créer de compte et sans donner d'adresse e-mail. Quand Bibli cherche une notice, il n'envoie que l'ISBN.
 
-Si l'école le souhaite, chaque famille peut recevoir un lien personnel qui montre les livres en cours de l'enfant et leur date de retour. Les parents n'ont pas besoin de compte, et Bibli n'envoie aucun message.
+![Le lien envoyé aux parents, sur un téléphone](assets/bibli/family.png)
 
-![Le lien de suivi d'une famille, sur un téléphone](assets/bibli/family.png)
+## Côté technique
 
-Pour retrouver une fiche, seul l'ISBN du livre quitte le serveur. Les couvertures sont récupérées par Bibli lui-même, pas par le navigateur des élèves.
+C'est un binaire Go avec une base SQLite et un peu de HTMX. Il n'y a ni CDN ni service extérieur, et on peut prêter même si Internet est coupé. Sauvegarder, c'est copier un fichier, et Bibli en fait une copie tous les jours. On peut l'installer comme une application sur l'ordinateur de la bibliothèque, ou comme serveur si l'école veut l'utiliser sur plusieurs postes ou sur des tablettes. L'interface existe en français, en néerlandais et en anglais.
 
-## Installer
+Le code est libre, sous licence AGPL-3.0, et il se trouve sur [GitHub](https://github.com/tintamarre/bibli).
 
-Il y a deux façons de l'installer. Pour une bibliothèque qui n'a qu'un ordinateur, une application de bureau pour Mac, Windows ou Linux se télécharge et s'ouvre d'un double-clic. Pour plusieurs postes ou des tablettes, Bibli peut tourner comme serveur sur le réseau de l'école ou sur Internet. Un vieux PC ou un Raspberry Pi suffit.
-
-Sous le capot, c'est un binaire Go et un fichier SQLite, avec HTMX pour l'interactivité. Tout est servi par l'application : pas de CDN, pas de compte à créer. Prêter et rendre fonctionnent même sans Internet. Une sauvegarde est faite chaque jour, et on la télécharge depuis les réglages.
-
-Bibli est un logiciel libre sous licence AGPL-3.0. Le code et la documentation sont sur [github.com/tintamarre/bibli](https://github.com/tintamarre/bibli).
-
-L'école commence tout juste à l'utiliser. Si une autre école voulait l'essayer, ou si vous avez une remarque, écrivez-moi.
+L'école commence à peine à s'en servir, et je m'attends à devoir changer pas mal de choses une fois que les élèves seront passés au comptoir. Si vous travaillez dans une école et que ça vous intéresse, écrivez-moi.
