@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bibli: a small app for a school library | Mesylab SRL</title>
+    <meta name="description" content="I wrote a small application for the library of the school in Lincé. Here is what it does, and how.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://www.mesylab.com/blog/bibli-school-library/">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Mesylab SRL">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:url" content="https://www.mesylab.com/blog/bibli-school-library/">
+    <meta property="og:title" content="Bibli: a small app for a school library">
+    <meta property="og:description" content="I wrote a small application for the library of the school in Lincé. Here is what it does, and how.">
+    <meta property="og:image" content="https://www.mesylab.com/blog/assets/bibli/scan-smartphone.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bibli: a small app for a school library">
+    <meta name="twitter:description" content="I wrote a small application for the library of the school in Lincé. Here is what it does, and how.">
+    <meta name="twitter:image" content="https://www.mesylab.com/blog/assets/bibli/scan-smartphone.jpg">
+    <meta name="author" content="Martin Erpicum">
+    <meta name="keywords" content="bibli, go, sqlite">
+    <meta property="article:published_time" content="2026-09-16">
+    <meta property="article:modified_time" content="2026-09-16">
+    <meta property="article:author" content="Martin Erpicum">
+    <meta property="article:section" content="Bibli">
+    <meta property="article:tag" content="bibli">
+    <meta property="article:tag" content="go">
+    <meta property="article:tag" content="sqlite">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Bibli: a small app for a school library","description":"I wrote a small application for the library of the school in Lincé. Here is what it does, and how.","inLanguage":"en","datePublished":"2026-09-16","dateModified":"2026-09-16","author":{"@type":"Person","name":"Martin Erpicum"},"publisher":{"@type":"Organization","name":"Mesylab SRL","logo":{"@type":"ImageObject","url":"https://www.mesylab.com/mesylab-logo.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.mesylab.com/blog/bibli-school-library/"},"url":"https://www.mesylab.com/blog/bibli-school-library/","image":["https://www.mesylab.com/blog/assets/bibli/scan-smartphone.jpg"],"keywords":"bibli, go, sqlite"}</script>
+    <link rel="stylesheet" href="/blog-theme.css">
+  </head>
+  <body>
+    <div class="blog-shell">
+      <main class="blog-main">
+        <header class="blog-header">
+          <div class="blog-topbar">
+            <a class="blog-brand" href="/" aria-label="Back to Mesylab SRL">
+              <img class="blog-logo" src="/mesylab-logo.svg" alt="Mesylab SRL">
+              <span class="blog-brand__text">Mesylab SRL</span>
+            </a>
+            <nav class="blog-nav" aria-label="Blog navigation">
+              <a class="blog-nav__back" href="/blog/"><span aria-hidden="true">&larr;</span> All posts</a>
+            </nav>
+          </div>
+        </header>
+
+        <section class="blog-content">
+          <article class="blog-article">
+            <div class="blog-article__header">
+              <div class="blog-article__heading">
+                <p class="blog-eyebrow">Mesylab</p>
+                <h1 class="blog-title">Bibli: a small app for a school library</h1>
+              </div>
+              
+                <a class="blog-project-badge" href="/#project-bibli">Bibli</a>
+              
+            </div>
+            <div class="blog-post-meta">
+              <time datetime="2026-09-16">September 16, 2026</time>
+              <span class="blog-author">By Martin Erpicum</span>
+              <span class="blog-readtime">3 min read</span>
+              
+                <div class="blog-tags">
+                  <span class="blog-tag">bibli</span><span class="blog-tag">go</span><span class="blog-tag">sqlite</span>
+                </div>
+              
+            </div>
+            
+              <figure class="blog-hero-image">
+                <img src="/blog/assets/bibli/scan-smartphone.jpg" alt="Bibli: a small app for a school library">
+              </figure>
+            
+            <div class="blog-prose">
+              <p><strong>Bibli</strong> is a small application I wrote for the library of the school in Lincé, in French-speaking Belgium. It has about three thousand books, two hundred pupils and a few dozen loans a week. Teachers and volunteers look after it, and there’s nobody at the school who does IT.</p>
+<p>I made a two-minute video on made-up data. If you’d rather try it yourself, there’s a <a href="https://bibli.tintamarre.be" rel="noopener noreferrer">live demo</a> (the password is <code>demo</code>).</p>
+<p><a href="https://www.youtube.com/watch?v=Yo_IYGwo8sM" rel="noopener noreferrer"><img src="/blog/assets/bibli/video.jpg" alt="Bibli — video demonstration" loading="lazy" decoding="async" /></a></p>
+<h2>Lending and returning</h2>
+<p>At the desk, you scan the pupil’s card, then their books, and confirm. To return a book you just scan it, without needing to know who had it. A USB barcode scanner for about thirty euros is enough, because it pretends to be a keyboard. A tablet camera works too. When a child has forgotten their card, you type their class and the start of their first name.</p>
+<p><img src="/blog/assets/bibli/borrow.png" alt="The lending screen" loading="lazy" decoding="async" /></p>
+<h2>Cataloguing</h2>
+<p>When you scan a book’s ISBN, Bibli looks for the record at the <a href="https://www.bnf.fr" rel="noopener noreferrer">BnF</a>, then at <a href="https://www.unicat.be" rel="noopener noreferrer">UniCat</a> for Belgian editions, and finally at Google Books and Open Library. Most of the time the record comes back complete with a cover, and all that’s left is to say how many copies you have.</p>
+<p>This is also where I first got things wrong. The barcode on a book is an ISBN-13, but for books from before 2007 the catalogues often only know the old ISBN-10. A school library has plenty of those. So Bibli now tries both. There’s still roughly one book in ten that can’t be found anywhere, mostly picture books for small children, and those get typed in by hand.</p>
+<p><img src="/blog/assets/bibli/catalogue.png" alt="A book's record after scanning its ISBN" loading="lazy" decoding="async" /></p>
+<p>You don’t have to stick labels on anything, because you can lend with the ISBN printed on the book. Labels are mainly for books without a barcode and for the ones the library has several copies of. Bibli prints them on sticker sheets with a barcode and the shelf mark, which is the first three letters of the author’s name (SAI for Saint-Exupéry). Pupil cards print the same way, one class at a time.</p>
+<p><img src="/blog/assets/bibli/labels.png" alt="A sheet of labels" loading="lazy" decoding="async" /></p>
+<p>For the rest of the year, there’s an overdue list to print for each class, an inventory, statistics on the books nobody borrows, and a screen that moves everyone up a class in September.</p>
+<h2>Children’s data</h2>
+<p>I wanted to keep as little as possible about the pupils. Bibli only knows a first name, a surname initial and a class. After three years, old loans are detached from the child, and only the book keeps its count. If the school wants it, parents can get a link that shows what their child has borrowed, with no account and no email address. When Bibli looks up a record, the only thing it sends is the ISBN.</p>
+<p><img src="/blog/assets/bibli/family.png" alt="The link sent to parents, on a phone" loading="lazy" decoding="async" /></p>
+<h2>The technical side</h2>
+<p>It’s a Go binary with a SQLite database and a bit of HTMX. There’s no CDN and no outside service, and lending still works when the Internet is down. Backing up means copying a file, and Bibli makes a copy every day. You can install it as an app on the library computer, or as a server if the school wants to use it from several computers or tablets. The interface is in French, Dutch and English.</p>
+<p>The code is free software under the AGPL-3.0, and it’s on <a href="https://github.com/tintamarre/bibli" rel="noopener noreferrer">GitHub</a>.</p>
+<p>The school is only just starting to use it, and I expect to change quite a few things once pupils have actually been through the desk. If you work in a school and this sounds useful, get in touch.</p>
+
+            </div>
+          </article>
+        </section>
+      </main>
+
+      <footer class="blog-footer">
+        <div class="blog-footer__inner">
+          <p><a href="/blog/">Back to the blog index</a></p>
+          <div class="blog-footer__links">
+            <a href="/">Home</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
