@@ -6,7 +6,7 @@ author: Martin Erpicum
 category: Article
 lang: en
 project: bibli
-description: "One binary, one SQLite file, six screens. Notes on an application written for a primary school library."
+description: "Lend with a barcode scanner, catalogue by ISBN, print labels: a free application for a school library run by volunteers."
 image: assets/bibli/scan-smartphone.jpg
 tags:
   - bibli
@@ -14,58 +14,72 @@ tags:
   - sqlite
 ---
 
-**Bibli** is a small application written for the library of the school of Lincé, in French-speaking Belgium: about two thousand books, two hundred pupils, a few dozen loans a week. It is run by teachers and volunteers, and there is no IT staff on site.
+**Bibli** is an application for a school library. I wrote it for the library of the school in Lincé, in French-speaking Belgium: about two thousand books, two hundred pupils and a few dozen loans a week. It is run by teachers and volunteers, with no IT staff on site.
 
-That last sentence decided the technical choices for this project. I tried to stick to one question: what breaks in five years if nobody touches it? A Go binary, a SQLite file, the standard library, HTMX for the interactive bits — all of it committed to the repository, no CDN, one production dependency. Nothing original, which is rather the point: backing up means copying a file.
+It lets them lend and return books with a barcode scanner, catalogue a book by scanning its ISBN, print labels and pupil cards, and keep track of overdue books. The interface is available in French, Dutch and English.
 
-![Open loans](assets/bibli/hero.png)
+![Bibli's home screen: lend, return, and the books on the shelf, on loan and overdue](assets/bibli/home.png)
 
 A two-minute walkthrough, on made-up data:
 
 [![Bibli — video demonstration](assets/bibli/video.jpg)](https://www.youtube.com/watch?v=Yo_IYGwo8sM)
 
-There is also a [live demo](https://bibli.tintamarre.be) (password `demo`) where everything is clickable — lending, cataloguing by ISBN, printing labels — and reset regularly.
+There is also a [live demo](https://bibli.tintamarre.be) (password `demo`): a fictional school where you can try everything, reset regularly.
 
 ## At the desk
 
-A loan is recorded with a €30 USB barcode scanner, which behaves like a keyboard, or with the camera of a phone or tablet. Scan the pupil's card, then the books. The screen recalls what the child already has out, and flags any overdue book before another one is handed over. A return needs nothing but the book's barcode.
+The desk has two screens: *Borrow* and *Return*. To lend, you scan the pupil's card, then their books, and confirm once for the whole basket. The screen shows what the child already has out. To return, you just scan the book.
 
-![The lending screen](assets/bibli/01.png)
+![The lending screen: the borrower, then the scanned books](assets/bibli/borrow.png)
 
-## The ISBN, and its second form
+An entry-level USB scanner, around €30, does the job: it behaves like a keyboard and needs no setup. The camera of a phone or tablet works too. If a pupil has forgotten their card, you type their class and the start of their first name ("P3 lé"). If a label won't scan, a few words of the title are enough.
 
-This is where I got it wrong first. The barcode on the back of a book is always an EAN-13, but books published before 2007 were catalogued under ISBN-10, and many records are indexed only in that form. Querying a catalogue with the scanned value alone leaves out part of the collection — the older part, which is most of a school library.
+## Cataloguing
 
-So Bibli works out both forms and queries with both: the [BnF](https://www.bnf.fr) first, then [UniCat](https://www.unicat.be) for Belgian editions, Google Books and Open Library after that. The record comes back pre-filled, you correct it, you say how many copies.
+You scan the ISBN on the back of the book and Bibli queries the catalogues: the [BnF](https://www.bnf.fr), [UniCat](https://www.unicat.be) for Belgian editions, then Google Books and Open Library. The record comes back pre-filled with title, authors, publisher and cover. You check it, enter the number of copies and, if you like, a location ("Picture books 3–5", "class P3").
 
-![The record after scanning an ISBN](assets/bibli/02.png)
+![The record filled in from the ISBN, with its cover](assets/bibli/catalogue.png)
 
-In my tests, three to seven per cent stay unresolved — picture books, small publishers, older titles. So manual entry is one click away, and it is not a fallback: it is a normal path.
+A book's barcode is an ISBN-13, but many books published before 2007 are known to catalogues only by their old ISBN-10. So Bibli works out both forms and searches with both, which makes a real difference for older books.
 
-Labels print four to the width of an A4 sheet, with the shelf mark taken from the title. Borrower cards print by class.
+About one book in ten isn't found anywhere: picture books for toddlers, small publishers, old titles. Manual entry covers them, and only the title is required. An unknown book scanned at the desk can also be catalogued on the spot and lent straight away.
 
-![Copy labels](assets/bibli/03.png)
+## Labels and cards
 
-![Borrower cards](assets/bibli/04.png)
+You can do without labels and lend by ISBN alone. Labels help with books that have no barcode and with titles the library owns several copies of. They print on A4 sticker sheets of 44, with a barcode, the title and the shelf mark. The shelf mark is the first three letters of the author's surname, as in public libraries: SAI for Saint-Exupéry.
 
-## As little data as possible
+![A sheet of labels: title, barcode and shelf mark](assets/bibli/labels.png)
 
-This is data about children, so the app records a first name, a last-name initial and a class. Nothing else: no date of birth, no address, no email, no photo. "Durant" becomes "D.". If the database ever leaks, it stays barely identifying.
+Pupil cards print by class, on the same sheets. Printed on plain paper, a class's page becomes a sheet to keep at the desk for forgotten cards.
 
-Loan history says a lot about a child, though: past an adjustable delay — three years by default — returned loans are reassigned to an anonymous borrower. The link between the child and their reading disappears, the book keeps its count.
+![A class's cards: first name, initial and barcode](assets/bibli/cards.png)
 
-Parents have no accounts: a secret per-pupil link, handed out in person, shows what the child has out. Nothing is sent, no address is stored.
+## Through the year
 
-![The tracking link, on a phone](assets/bibli/05.png)
+The *Loans* screen lists what is out, class by class. Overdue books print as a list grouped by class, to hand out to each classroom.
 
-And only an ISBN ever leaves the school: covers are fetched by the server, never by a pupil's browser.
+![Current loans, grouped by class then by pupil](assets/bibli/loans.png)
 
-## What I did not build
+The inventory lists every copy with its location and condition (damaged, lost, withdrawn). Sorted by shelf mark, it follows the order of the shelves. The statistics show the most borrowed books and the ones that have never left the shelf. At the start of the school year, a single screen moves each class up a year, and the list of new pupils is imported from a spreadsheet.
 
-No reservations, no public catalogue, no automatic emails to parents, no pupil accounts, no fines. Less out of principle than out of caution: every extra screen is a screen to explain to someone who did not ask for it, and to repair when I am no longer around.
+![The inventory, with each copy's location and condition](assets/bibli/inventory.png)
 
-Real use is only just starting. The real questions — how long a loan should run, how many books at a time, what to do with a lost book — will probably be settled differently from what I assumed, once a few weeks have passed with real pupils in front of it.
+## Children's data
 
-It is free software under the AGPL-3.0, and the code is open: [github.com/tintamarre/bibli](https://github.com/tintamarre/bibli). It can run on a single computer — a Mac, Windows or Linux app to download — or be deployed for a whole school; the repository explains how.
+For a pupil, Bibli records a first name, a surname initial and a class, nothing more: type "Durant" and only "D." is kept. After three years by default (the delay can be changed), past loans are no longer linked to the child. The books keep their loan counts.
 
-If another school would like to try it, or if you have a remark on the way it is built, let me know. What interests me most is hearing what turns out to be missing once real pupils are in front of it.
+If the school wants it, each family can get a personal link that shows the child's current books and their due dates. Parents don't need an account, and Bibli sends no messages.
+
+![A family's tracking link, on a phone](assets/bibli/family.png)
+
+When Bibli looks up a record, only the book's ISBN leaves the server. Covers are fetched by Bibli itself, never by a pupil's browser.
+
+## Installing
+
+There are two ways to install it. For a library with a single computer, a desktop app for Mac, Windows or Linux downloads and opens with a double-click. For several computers or tablets, Bibli can run as a server on the school network or on the Internet. An old PC or a Raspberry Pi is enough.
+
+Under the hood, it is a Go binary and a SQLite file, with HTMX for the interactive parts. The application serves everything itself: no CDN and no account to create. Lending and returning work even without an Internet connection. A backup is made every day, and you can download it from the settings.
+
+Bibli is free software under the AGPL-3.0. The code and documentation are at [github.com/tintamarre/bibli](https://github.com/tintamarre/bibli).
+
+The school is only just starting to use it. If another school would like to try it, or if you have a remark, let me know.
